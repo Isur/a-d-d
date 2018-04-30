@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{AD2BBA10-DF3A-4487-B710-76752C044F1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A6CF44C2-B642-430B-9B65-5559D68AF69B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{A3BB5ED1-D44B-470E-9E2D-14F82F64E76C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{D55EAF64-EC1B-41F7-B1CB-C6E346BC8808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_Test", "DAL_Test\DAL_Test.csproj", "{BFF8EDF1-3573-4CD1-96FD-F22D79D0AE18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD2BBA10-DF3A-4487-B710-76752C044F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2BBA10-DF3A-4487-B710-76752C044F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2BBA10-DF3A-4487-B710-76752C044F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2BBA10-DF3A-4487-B710-76752C044F1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF8EDF1-3573-4CD1-96FD-F22D79D0AE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF8EDF1-3573-4CD1-96FD-F22D79D0AE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF8EDF1-3573-4CD1-96FD-F22D79D0AE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF8EDF1-3573-4CD1-96FD-F22D79D0AE18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3BB5ED1-D44B-470E-9E2D-14F82F64E76C} = {A6CF44C2-B642-430B-9B65-5559D68AF69B}
+		{D55EAF64-EC1B-41F7-B1CB-C6E346BC8808} = {A6CF44C2-B642-430B-9B65-5559D68AF69B}
+		{BFF8EDF1-3573-4CD1-96FD-F22D79D0AE18} = {D55EAF64-EC1B-41F7-B1CB-C6E346BC8808}
+	EndGlobalSection
+EndGlobal
