@@ -111,6 +111,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserConrols\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserConrols\NoteControl.resx">
+      <DependentUpon>NoteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserConrols\ProfileControl.resx">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserConrols\RegisterControl.resx">
+      <DependentUpon>RegisterControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

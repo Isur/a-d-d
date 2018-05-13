@@ -28,10 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.menuStripSelect = new System.Windows.Forms.MenuStrip();
+            this.uczelniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wydziałToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kierunekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.przedmiotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBoxNotes = new System.Windows.Forms.ListBox();
+            this.richTextBoxNote = new System.Windows.Forms.RichTextBox();
+            this.menuStripSelect.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStripSelect
+            // 
+            this.menuStripSelect.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uczelniaToolStripMenuItem,
+            this.wydziałToolStripMenuItem,
+            this.kierunekToolStripMenuItem,
+            this.przedmiotToolStripMenuItem});
+            this.menuStripSelect.Location = new System.Drawing.Point(0, 0);
+            this.menuStripSelect.Name = "menuStripSelect";
+            this.menuStripSelect.Size = new System.Drawing.Size(400, 24);
+            this.menuStripSelect.TabIndex = 0;
+            this.menuStripSelect.Text = "Menu";
+            // 
+            // uczelniaToolStripMenuItem
+            // 
+            this.uczelniaToolStripMenuItem.Name = "uczelniaToolStripMenuItem";
+            this.uczelniaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.uczelniaToolStripMenuItem.Text = "Uczelnia";
+            // 
+            // wydziałToolStripMenuItem
+            // 
+            this.wydziałToolStripMenuItem.Name = "wydziałToolStripMenuItem";
+            this.wydziałToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.wydziałToolStripMenuItem.Text = "Wydział";
+            // 
+            // kierunekToolStripMenuItem
+            // 
+            this.kierunekToolStripMenuItem.Name = "kierunekToolStripMenuItem";
+            this.kierunekToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.kierunekToolStripMenuItem.Text = "Kierunek";
+            // 
+            // przedmiotToolStripMenuItem
+            // 
+            this.przedmiotToolStripMenuItem.Name = "przedmiotToolStripMenuItem";
+            this.przedmiotToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.przedmiotToolStripMenuItem.Text = "Przedmiot";
+            // 
+            // listBoxNotes
+            // 
+            this.listBoxNotes.FormattingEnabled = true;
+            this.listBoxNotes.Location = new System.Drawing.Point(4, 28);
+            this.listBoxNotes.Name = "listBoxNotes";
+            this.listBoxNotes.Size = new System.Drawing.Size(120, 277);
+            this.listBoxNotes.TabIndex = 1;
+            // 
+            // richTextBoxNote
+            // 
+            this.richTextBoxNote.Location = new System.Drawing.Point(131, 28);
+            this.richTextBoxNote.Name = "richTextBoxNote";
+            this.richTextBoxNote.Size = new System.Drawing.Size(266, 278);
+            this.richTextBoxNote.TabIndex = 2;
+            this.richTextBoxNote.Text = "";
+            // 
+            // NoteControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.richTextBoxNote);
+            this.Controls.Add(this.listBoxNotes);
+            this.Controls.Add(this.menuStripSelect);
+            this.Name = "NoteControl";
+            this.Size = new System.Drawing.Size(400, 309);
+            this.menuStripSelect.ResumeLayout(false);
+            this.menuStripSelect.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStripSelect;
+        private System.Windows.Forms.ToolStripMenuItem uczelniaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wydziałToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kierunekToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem przedmiotToolStripMenuItem;
+        private System.Windows.Forms.ListBox listBoxNotes;
+        private System.Windows.Forms.RichTextBox richTextBoxNote;
     }
 }

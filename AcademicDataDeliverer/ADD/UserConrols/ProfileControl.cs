@@ -21,14 +21,19 @@ namespace ADD.UserConrols
             InitializeComponent();
         }
         #endregion
+
         #region INTERFACE
 
         #endregion
+
         #region PUBLIC
 
         #endregion
+
         #region PRIVATE
 
         #endregion
+
+
     }
 }
