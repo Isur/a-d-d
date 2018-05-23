@@ -8,9 +8,9 @@ namespace ADD.Presenters
 {
     public class NotePresenter
     {
-        Models.Model model;
+        Models.NoteModel model;
         Views.INoteView view;
-        public NotePresenter(Models.Model model, Views.INoteView view)
+        public NotePresenter(Models.NoteModel model, Views.INoteView view)
         {
             this.model = model;
             this.view = view;

@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADD.Models
 {
-    public class Model
+    public class LoginModel
     {
-        public Model()
-        {
-
-        }
     }
 }

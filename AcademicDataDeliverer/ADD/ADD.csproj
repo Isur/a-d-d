@@ -56,9 +56,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\NoteModel.cs" />
+    <Compile Include="Models\ProfileModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
-    <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\NotePresenter.cs" />
     <Compile Include="Presenters\ProfilePresenter.cs" />
     <Compile Include="Presenters\RegisterPresenter.cs" />
@@ -69,12 +71,6 @@
     </Compile>
     <Compile Include="UserConrols\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserConrols\MainControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserConrols\MainControl.Designer.cs">
-      <DependentUpon>MainControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserConrols\NoteControl.cs">
       <SubType>UserControl</SubType>
@@ -95,7 +91,6 @@
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ILoginView.cs" />
-    <Compile Include="Views\IMainView.cs" />
     <Compile Include="Views\INoteView.cs" />
     <Compile Include="Views\IProfileView.cs" />
     <Compile Include="Views\IRegisterView.cs" />

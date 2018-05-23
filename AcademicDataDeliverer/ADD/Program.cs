@@ -18,19 +18,20 @@ namespace ADD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var model = new Models.Model();
+            var modelLogin = new Models.LoginModel();
+            var modelRegister = new Models.RegisterModel();
+            var modelNote = new Models.NoteModel();
+            var modelProfile = new Models.ProfileModel();
 
             var viewLogin = new UserConrols.LoginControl();
             var viewRegister = new UserConrols.RegisterControl();
             var viewNote = new UserConrols.NoteControl();
             var viewProfile = new UserConrols.ProfileControl();
-            var viewMain = new UserConrols.MainControl();
 
-            var presenterLogin = new Presenters.LoginPresenter(model, viewLogin);
-            var presenterRegister = new Presenters.RegisterPresenter(model, viewRegister);
-            var presenterNote = new Presenters.NotePresenter(model, viewNote);
-            var presenterProfile = new Presenters.ProfilePresenter(model, viewProfile);
-            var presenterMain = new Presenters.MainPresenter(model, viewMain);
+            var presenterLogin = new Presenters.LoginPresenter(modelLogin, viewLogin);
+            var presenterRegister = new Presenters.RegisterPresenter(modelRegister, viewRegister);
+            var presenterNote = new Presenters.NotePresenter(modelNote, viewNote);
+            var presenterProfile = new Presenters.ProfilePresenter(modelProfile, viewProfile);
 
             var formMain = new MainForm();
 

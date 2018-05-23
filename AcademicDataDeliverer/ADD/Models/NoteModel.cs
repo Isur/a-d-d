@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ADD.Views
+namespace ADD.Models
 {
-    public interface IMainView
+    public class NoteModel
     {
     }
 }
