@@ -35,6 +35,9 @@
             this.przedmiotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBoxNotes = new System.Windows.Forms.ListBox();
             this.richTextBoxNote = new System.Windows.Forms.RichTextBox();
+            this.mENUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pROFILToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wYLOGUJToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripSelect.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +47,8 @@
             this.uczelniaToolStripMenuItem,
             this.wydziałToolStripMenuItem,
             this.kierunekToolStripMenuItem,
-            this.przedmiotToolStripMenuItem});
+            this.przedmiotToolStripMenuItem,
+            this.mENUToolStripMenuItem});
             this.menuStripSelect.Location = new System.Drawing.Point(0, 0);
             this.menuStripSelect.Name = "menuStripSelect";
             this.menuStripSelect.Size = new System.Drawing.Size(400, 24);
@@ -91,6 +95,27 @@
             this.richTextBoxNote.TabIndex = 2;
             this.richTextBoxNote.Text = "";
             // 
+            // mENUToolStripMenuItem
+            // 
+            this.mENUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pROFILToolStripMenuItem,
+            this.wYLOGUJToolStripMenuItem});
+            this.mENUToolStripMenuItem.Name = "mENUToolStripMenuItem";
+            this.mENUToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.mENUToolStripMenuItem.Text = "MENU";
+            // 
+            // pROFILToolStripMenuItem
+            // 
+            this.pROFILToolStripMenuItem.Name = "pROFILToolStripMenuItem";
+            this.pROFILToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pROFILToolStripMenuItem.Text = "PROFIL";
+            // 
+            // wYLOGUJToolStripMenuItem
+            // 
+            this.wYLOGUJToolStripMenuItem.Name = "wYLOGUJToolStripMenuItem";
+            this.wYLOGUJToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.wYLOGUJToolStripMenuItem.Text = "WYLOGUJ";
+            // 
             // NoteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,5 +141,8 @@
         private System.Windows.Forms.ToolStripMenuItem przedmiotToolStripMenuItem;
         private System.Windows.Forms.ListBox listBoxNotes;
         private System.Windows.Forms.RichTextBox richTextBoxNote;
+        private System.Windows.Forms.ToolStripMenuItem mENUToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pROFILToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wYLOGUJToolStripMenuItem;
     }
 }

@@ -33,26 +33,27 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.buttonForgottenPassword = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(47, 2);
+            this.textBoxLogin.Location = new System.Drawing.Point(46, 3);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(144, 20);
             this.textBoxLogin.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(48, 29);
+            this.textBoxPassword.Location = new System.Drawing.Point(47, 30);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(143, 20);
             this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(48, 55);
+            this.buttonLogin.Location = new System.Drawing.Point(47, 56);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(143, 23);
             this.buttonLogin.TabIndex = 2;
@@ -62,7 +63,7 @@
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(6, 8);
+            this.labelLogin.Location = new System.Drawing.Point(5, 9);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(33, 13);
             this.labelLogin.TabIndex = 3;
@@ -71,26 +72,26 @@
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(7, 35);
+            this.labelPassword.Location = new System.Drawing.Point(6, 36);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(36, 13);
             this.labelPassword.TabIndex = 4;
             this.labelPassword.Text = "Hasło";
             // 
-            // buttonForgottenPassword
+            // buttonRegister
             // 
-            this.buttonForgottenPassword.Location = new System.Drawing.Point(47, 85);
-            this.buttonForgottenPassword.Name = "buttonForgottenPassword";
-            this.buttonForgottenPassword.Size = new System.Drawing.Size(144, 23);
-            this.buttonForgottenPassword.TabIndex = 5;
-            this.buttonForgottenPassword.Text = "Zapomniałem Hasła";
-            this.buttonForgottenPassword.UseVisualStyleBackColor = true;
+            this.buttonRegister.Location = new System.Drawing.Point(46, 86);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(144, 23);
+            this.buttonRegister.TabIndex = 5;
+            this.buttonRegister.Text = "REJESTRACJA";
+            this.buttonRegister.UseVisualStyleBackColor = true;
             // 
             // LoginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonForgottenPassword);
+            this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonLogin);
@@ -110,6 +111,6 @@
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.Button buttonForgottenPassword;
+        private System.Windows.Forms.Button buttonRegister;
     }
 }
