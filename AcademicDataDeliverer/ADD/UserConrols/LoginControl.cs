@@ -12,7 +12,6 @@ namespace ADD.UserConrols
 {
     public partial class LoginControl : UserControl, Views.ILoginView
     {
-
         #region FIELDS & PROPERTIES
 
         #endregion
@@ -50,11 +49,24 @@ namespace ADD.UserConrols
         }
         public event Func<string, string, bool> LoginClick;
         #endregion
+
         #region PUBLIC
 
         #endregion
-        #region PRIVATE
 
+        #region PRIVATE
+        private void Login_Click(object sender, EventArgs e)
+        {
+            var login = textBoxLogin.Text;
+            var password = textBoxPassword.Text;
+
+            var loginResponse = LoginClick.Invoke(login, password);
+
+            if (loginResponse)
+                MessageBox.Show("Dobrze!");
+            else
+                MessageBox.Show("Źle!");
+        }
         #endregion
     }
 }

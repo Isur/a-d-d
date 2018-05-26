@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ADD.UserConrols;
+using ADD.Models;
+using ADD.Presenters;
+
 namespace ADD
 {
     public partial class MainForm : Form
@@ -30,7 +33,7 @@ namespace ADD
         /* Przy wczytaniu zaczynamy od okienka logowania */
         private void MainForm_Load(object sender, EventArgs e)
         {
-            activeControl = new UserConrols.LoginControl();
+            showLoginView();
             activeControl.Left = (this.Width - activeControl.Width)/2;
             activeControl.Top = (this.Height - activeControl.Height) / 2;
             this.Controls.Add(activeControl);
@@ -41,7 +44,16 @@ namespace ADD
         {
             activeControl.Left = (this.Width - activeControl.Width) / 2;
             activeControl.Top = (this.Height - activeControl.Height) / 2;
-         }
+        }
         #endregion
+
+        private void showLoginView()
+        {
+            var view = new LoginControl();
+            var model = new LoginModel();
+            var controller = new LoginPresenter(model, view);
+
+            activeControl = view;
+        }
     }
 }
