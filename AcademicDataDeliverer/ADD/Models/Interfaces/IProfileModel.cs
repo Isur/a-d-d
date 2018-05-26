@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADD.Models
 {
-    public class RegisterModel : IRegisterModel
+    public interface IProfileModel
     {
     }
 }

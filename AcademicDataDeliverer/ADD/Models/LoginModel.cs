@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace ADD.Models
 {
-    public class LoginModel
+    public class LoginModel : ILoginModel
     {
+        public string Login
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

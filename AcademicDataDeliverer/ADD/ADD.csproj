@@ -56,6 +56,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Interfaces\ILoginModel.cs" />
+    <Compile Include="Models\Interfaces\INoteModel.cs" />
+    <Compile Include="Models\Interfaces\IProfileModel.cs" />
+    <Compile Include="Models\Interfaces\IRegisterModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\NoteModel.cs" />
     <Compile Include="Models\ProfileModel.cs" />
