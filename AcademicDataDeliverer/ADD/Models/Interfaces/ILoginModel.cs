@@ -7,6 +7,6 @@ namespace ADD.Models
 {
     public interface ILoginModel
     {
-        string Login { get; set; }
+        bool Login(string login, string password);
     }
 }
