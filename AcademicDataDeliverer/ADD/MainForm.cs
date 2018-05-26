@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using ADD.UserConrols;
 using ADD.Models;
 using ADD.Presenters;
+using ADD.Models.Session;
 
 namespace ADD
 {
     public partial class MainForm : Form
     {
         UserControl activeControl;
+        ISession session = new Session();
+
         public MainForm()
         {
             InitializeComponent();
@@ -50,7 +53,7 @@ namespace ADD
         private void showLoginView()
         {
             var view = new LoginControl();
-            var model = new LoginModel();
+            var model = new LoginModel(session);
             var controller = new LoginPresenter(model, view);
 
             activeControl = view;

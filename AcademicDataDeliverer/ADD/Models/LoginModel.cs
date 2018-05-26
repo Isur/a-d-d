@@ -1,4 +1,5 @@
-﻿using ADD.Models.Utils.Encrypters;
+﻿using ADD.Models.Session;
+using ADD.Models.Utils.Encrypters;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,17 @@ namespace ADD.Models
     public class LoginModel : ILoginModel
     {
         private IEncrypter encrypter;
+        private ISession session;
 
-        public LoginModel()
+        public LoginModel(ISession session)
         {
             encrypter = new SHA1Encrypter();
+            this.session = session;
         }
 
-        public LoginModel(IEncrypter encrypter)
+        public LoginModel(ISession session, IEncrypter encrypter)
         {
+            this.session = session;
             this.encrypter = encrypter;
         }
 
@@ -27,9 +31,15 @@ namespace ADD.Models
         {
             var hashedPassword = encrypter.Encrypt(password);
 
-            //TODO: dodać użytkownika do jakiejś sesji, żeby można było na nim wykonywać operacje później
+            var userList = UsersRepository.GetList().Where(x => x.Login == login && x.Password == hashedPassword).ToList();
+            var anyMathisUsers = userList.Count > 0;
 
-            return UsersRepository.GetList().Where(x => x.Login == login && x.Password == hashedPassword).ToList().Count > 0;
+            if (anyMathisUsers)
+            {
+                session.User = userList.First();
+            }
+
+            return anyMathisUsers;
         }
     }
 }

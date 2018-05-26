@@ -64,6 +64,8 @@
     <Compile Include="Models\NoteModel.cs" />
     <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\Session\ISession.cs" />
+    <Compile Include="Models\Session\Session.cs" />
     <Compile Include="Models\Utils\Encrypters\IEncrypter.cs" />
     <Compile Include="Models\Utils\Encrypters\SHA1Encrypter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
