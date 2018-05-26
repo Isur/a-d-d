@@ -10,9 +10,9 @@ namespace ADD.Presenters
 {
     public class LoginPresenter
     {
-        LoginModel model;
+        Models.ILoginModel model;
         ILoginView view;
-        public LoginPresenter(LoginModel model, ILoginView view)
+        public LoginPresenter(Models.ILoginModel model, Views.ILoginView view)
         {
             this.model = model;
             this.view = view;

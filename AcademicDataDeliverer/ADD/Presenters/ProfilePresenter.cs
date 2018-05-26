@@ -8,9 +8,9 @@ namespace ADD.Presenters
 {
     public class ProfilePresenter
     {
-        Models.ProfileModel model;
+        Models.IProfileModel model;
         Views.IProfileView view;
-        public ProfilePresenter(Models.ProfileModel model, Views.IProfileView view)
+        public ProfilePresenter(Models.IProfileModel model, Views.IProfileView view)
         {
             this.model = model;
             this.view = view;

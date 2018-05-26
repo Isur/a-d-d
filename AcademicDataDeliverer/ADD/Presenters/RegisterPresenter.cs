@@ -8,9 +8,9 @@ namespace ADD.Presenters
 {
     public class RegisterPresenter
     {
-        Models.RegisterModel model;
+        Models.IRegisterModel model;
         Views.IRegisterView view;
-        public RegisterPresenter(Models.RegisterModel model, Views.IRegisterView view)
+        public RegisterPresenter(Models.IRegisterModel model, Views.IRegisterView view)
         {
             this.model = model;
             this.view = view;

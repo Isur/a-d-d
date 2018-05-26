@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADD.Models
 {
-    public class NoteModel
+    public class NoteModel : INoteModel
     {
     }
 }
