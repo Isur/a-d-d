@@ -1,0 +1,22 @@
+\select@language {polish}
+\contentsline {section}{\numberline {1}Harmonogram prac}{3}{section.1}
+\contentsline {section}{\numberline {2}Opis projektu}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Opis}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Funkcjonalno\IeC {\'s}ci}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Logowanie i Rejestracja}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Przypasanie do grup}{4}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Notatki}{4}{subsubsection.2.2.3}
+\contentsline {section}{\numberline {3}Rozwi\IeC {\k a}zania}{4}{section.3}
+\contentsline {subsubsection}{\numberline {3.0.1}Technologie}{4}{subsubsection.3.0.1}
+\contentsline {subsubsection}{\numberline {3.0.2}Oprogramowanie}{4}{subsubsection.3.0.2}
+\contentsline {section}{\numberline {4}Projekt UI}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Logowanie}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Rejestracja}{4}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Profil}{5}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Notatka}{5}{subsection.4.4}
+\contentsline {section}{\numberline {5}Implementacja}{5}{section.5}
+\contentsline {subsection}{\numberline {5.1}Podzia\IeC {\l } projektu na pliki}{5}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Schemat Modelu Obiektowego}{5}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Interfejsy}{5}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Algorytm/Rozwi\IeC {\k a}zanie}{5}{subsection.5.4}
+\contentsline {section}{\numberline {6}Testy}{5}{section.6}

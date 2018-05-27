@@ -1,0 +1,21 @@
+\BOOKMARK [1][-]{section.1}{Harmonogram prac}{}% 1
+\BOOKMARK [1][-]{section.2}{Opis projektu}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Opis}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Funkcjonalnosci}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Logowanie i Rejestracja}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Przypasanie do grup}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Notatki}{subsection.2.2}% 7
+\BOOKMARK [1][-]{section.3}{Rozwiazania}{}% 8
+\BOOKMARK [2][-]{subsubsection.3.0.1}{Technologie}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.0.2}{Oprogramowanie}{subsubsection.3.0.1}% 10
+\BOOKMARK [1][-]{section.4}{Projekt UI}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Logowanie}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Rejestracja}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.3}{Profil}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.4}{Notatka}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Implementacja}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Podzia\233 projektu na pliki}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Schemat Modelu Obiektowego}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Interfejsy}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.4}{Algorytm/Rozwiazanie}{section.5}% 20
+\BOOKMARK [1][-]{section.6}{Testy}{}% 21

@@ -1,0 +1,16 @@
+\select@language {polish}
+\contentsline {section}{\numberline {1}Opis projektu}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Opis}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Funkcjonalno\IeC {\'s}ci}{3}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Logowanie i Rejestracja}{3}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Przypasanie do grup}{3}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Notatki}{3}{subsubsection.1.2.3}
+\contentsline {section}{\numberline {2}Rozwi\IeC {\k a}zania}{3}{section.2}
+\contentsline {subsubsection}{\numberline {2.0.1}Technologie}{3}{subsubsection.2.0.1}
+\contentsline {subsubsection}{\numberline {2.0.2}Oprogramowanie}{3}{subsubsection.2.0.2}
+\contentsline {section}{\numberline {3}Baza Danych}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Diagram Encji}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Diagram Relacji}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}MySQL}{4}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}\IeC {\'S}rodowisko}{4}{subsection.3.4}
+\contentsline {section}{\numberline {4}Testy}{4}{section.4}
