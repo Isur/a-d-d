@@ -14,15 +14,18 @@ using ADD.Models.Session;
 
 namespace ADD
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IViewChanger
     {
         UserControl activeControl;
+        // Obiekt ten przechowuje zalogowanego użytkownika
+        // Modele na podstawie tego obiektu będą wiedziały np czyje notatki wyświetlać
         ISession session = new Session();
 
         public MainForm()
         {
             InitializeComponent();
         }
+
 
         #region PRIVATE
         /* Ukrywanie okienka przed wrzuceniem nowego. */
@@ -36,10 +39,7 @@ namespace ADD
         /* Przy wczytaniu zaczynamy od okienka logowania */
         private void MainForm_Load(object sender, EventArgs e)
         {
-            showLoginView();
-            activeControl.Left = (this.Width - activeControl.Width)/2;
-            activeControl.Top = (this.Height - activeControl.Height) / 2;
-            this.Controls.Add(activeControl);
+            ShowLoginView();
         }
 
         /* Przy zmianie rozmiaru okna, będzie zawsze wyśrodkowany UserControl */
@@ -49,14 +49,49 @@ namespace ADD
             activeControl.Top = (this.Height - activeControl.Height) / 2;
         }
         #endregion
-
-        private void showLoginView()
+   
+        public void ShowLoginView()
         {
-            var view = new LoginControl();
+            var view = new LoginControl(this);
             var model = new LoginModel(session);
-            var controller = new LoginPresenter(model, view);
+            var presenter = new LoginPresenter(model, view);
 
+            showView(view);
+            centerActualView();
+        }
+
+        public void ShowNoteView()
+        {
+            var view = new NoteControl();
+            var model = new NoteModel();
+            var presenter = new NotePresenter(model, view);
+
+            showView(view);
+            centerActualView();
+        }
+
+        public void ShowProfileView()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowRegisterView()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void centerActualView()
+        {
+            activeControl.Left = (this.Width - activeControl.Width) / 2;
+            activeControl.Top = (this.Height - activeControl.Height) / 2;
+        }
+
+        private void showView(UserControl view)
+        {
+            Controls.Remove(activeControl);
             activeControl = view;
+            Controls.Add(activeControl);
         }
     }
 }
+        

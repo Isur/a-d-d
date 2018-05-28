@@ -8,8 +8,8 @@ namespace ADD.Views
 {
     public interface ILoginView
     {
-        string Login { get; set; }
-        string Password { get; set; }
+        string Login { get; }
+        string Password { get; }
         event Func<string, string, bool> LoginClick;
     }
 }

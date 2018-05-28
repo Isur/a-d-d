@@ -34,12 +34,13 @@
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.buttonRegister = new System.Windows.Forms.Button();
+            this.loginProgressBar = new CircularProgressBar.CircularProgressBar();
             this.SuspendLayout();
             // 
             // textBoxLogin
             // 
             this.textBoxLogin.Location = new System.Drawing.Point(61, 4);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(191, 22);
             this.textBoxLogin.TabIndex = 0;
@@ -47,7 +48,7 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(63, 37);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(189, 22);
             this.textBoxPassword.TabIndex = 1;
@@ -56,7 +57,7 @@
             // buttonLogin
             // 
             this.buttonLogin.Location = new System.Drawing.Point(63, 69);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(191, 28);
             this.buttonLogin.TabIndex = 2;
@@ -87,24 +88,57 @@
             // buttonRegister
             // 
             this.buttonRegister.Location = new System.Drawing.Point(61, 106);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(192, 28);
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "REJESTRACJA";
             this.buttonRegister.UseVisualStyleBackColor = true;
             // 
+            // loginProgressBar
+            // 
+            this.loginProgressBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.loginProgressBar.AnimationSpeed = 500;
+            this.loginProgressBar.BackColor = System.Drawing.Color.Transparent;
+            this.loginProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.loginProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.loginProgressBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.loginProgressBar.InnerMargin = 2;
+            this.loginProgressBar.InnerWidth = -1;
+            this.loginProgressBar.Location = new System.Drawing.Point(86, 11);
+            this.loginProgressBar.MarqueeAnimationSpeed = 2000;
+            this.loginProgressBar.Name = "loginProgressBar";
+            this.loginProgressBar.OuterColor = System.Drawing.Color.Gray;
+            this.loginProgressBar.OuterMargin = -25;
+            this.loginProgressBar.OuterWidth = 26;
+            this.loginProgressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.loginProgressBar.ProgressWidth = 25;
+            this.loginProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.loginProgressBar.Size = new System.Drawing.Size(110, 103);
+            this.loginProgressBar.StartAngle = 270;
+            this.loginProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.loginProgressBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.loginProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.loginProgressBar.SubscriptText = ".23";
+            this.loginProgressBar.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.loginProgressBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.loginProgressBar.SuperscriptText = "°C";
+            this.loginProgressBar.TabIndex = 6;
+            this.loginProgressBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.loginProgressBar.Visible = false;
+            // 
             // LoginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.loginProgressBar);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLogin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginControl";
             this.Size = new System.Drawing.Size(265, 138);
             this.ResumeLayout(false);
@@ -120,5 +154,6 @@
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Button buttonRegister;
+        private CircularProgressBar.CircularProgressBar loginProgressBar;
     }
 }

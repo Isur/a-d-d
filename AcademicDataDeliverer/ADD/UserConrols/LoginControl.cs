@@ -7,46 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ADD.Views;
 
 namespace ADD.UserConrols
 {
-    public partial class LoginControl : UserControl, Views.ILoginView
+    public partial class LoginControl : UserControl, ILoginView
     {
         #region FIELDS & PROPERTIES
-
+        private IViewChanger viewChanger;
         #endregion
         #region CONSTRUCTOR
-        public LoginControl()
+        public LoginControl(IViewChanger viewChanger)
         {
             InitializeComponent();
+            this.viewChanger = viewChanger;
         }               
         #endregion
         #region INTERFACE
         public string Login
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return textBoxLogin.Text; }
         }
 
         public string Password
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return textBoxPassword.Text; }
         }
+
         public event Func<string, string, bool> LoginClick;
         #endregion
 
@@ -55,18 +42,40 @@ namespace ADD.UserConrols
         #endregion
 
         #region PRIVATE
-        private void Login_Click(object sender, EventArgs e)
+        private async void Login_Click(object sender, EventArgs e)
         {
-            var login = textBoxLogin.Text;
-            var password = textBoxPassword.Text;
+            loginProgressBar.Visible = true;
 
-            var loginResponse = LoginClick.Invoke(login, password);
+            var loginTask = new Task<bool>(() => 
+            {
+                return LoginClick.Invoke(Login, Password);
+            });
+            loginTask.Start();
 
-            if (loginResponse)
-                MessageBox.Show("Dobrze!");
+            var loginResult = await loginTask;
+
+            loginProgressBar.Visible = false;
+
+            if (loginResult)
+            {
+                onSuccessLoginAttempt();
+            }
             else
-                MessageBox.Show("Źle!");
+            {
+                onFailedLoginAttempt();
+            }
         }
         #endregion
+
+        private void onFailedLoginAttempt()
+        {
+            textBoxLogin.BackColor = Color.Red;
+            textBoxPassword.BackColor = Color.Red;
+        }
+
+        private void onSuccessLoginAttempt()
+        {
+            viewChanger.ShowNoteView();
+        }
     }
 }

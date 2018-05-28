@@ -1,5 +1,6 @@
 ﻿using ADD.Models.Session;
 using ADD.Models.Utils.Encrypters;
+using Common;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace ADD.Models
             if (anyMathisUsers)
             {
                 session.User = userList.First();
+                Logger.Info(string.Format(Properties.Resources.SuccessfulLoginAttempt, login));
+            }
+            else
+            {
+                Logger.Warning(string.Format(Properties.Resources.FailedLoginAttempt, login));
             }
 
             return anyMathisUsers;
