@@ -33,9 +33,9 @@ namespace ADD.Models
             var hashedPassword = encrypter.Encrypt(password);
 
             var userList = UsersRepository.GetList().Where(x => x.Login == login && x.Password == hashedPassword).ToList();
-            var anyMathisUsers = userList.Count > 0;
+            var anyMatchingUsers = userList.Count > 0;
 
-            if (anyMathisUsers)
+            if (anyMatchingUsers)
             {
                 session.User = userList.First();
                 Logger.Info(string.Format(Properties.Resources.SuccessfulLoginAttempt, login));
@@ -45,7 +45,7 @@ namespace ADD.Models
                 Logger.Warning(string.Format(Properties.Resources.FailedLoginAttempt, login));
             }
 
-            return anyMathisUsers;
+            return anyMatchingUsers;
         }
     }
 }

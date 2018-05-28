@@ -77,5 +77,10 @@ namespace ADD.UserConrols
         {
             viewChanger.ShowNoteView();
         }
+
+        private void Register_Click(object sender, EventArgs e)
+        {
+            viewChanger.ShowRegisterView();
+        }
     }
 }

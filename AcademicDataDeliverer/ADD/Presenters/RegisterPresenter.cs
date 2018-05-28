@@ -14,6 +14,11 @@ namespace ADD.Presenters
         {
             this.model = model;
             this.view = view;
+
+            this.view.CollegeComboBoxDropDown += this.model.GetColleges;
+            this.view.FacultyComboBoxDropDown += this.model.GetFacultiesInCollege;
+            this.view.SpecializationComboBoxDropDown += this.model.GetSpecializationsOnFaculty;
+            this.view.RegisterClick += this.model.RegisterNewUser;
         }
     }
 }

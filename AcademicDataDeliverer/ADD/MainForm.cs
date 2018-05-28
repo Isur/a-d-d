@@ -11,6 +11,7 @@ using ADD.UserConrols;
 using ADD.Models;
 using ADD.Presenters;
 using ADD.Models.Session;
+using ADD.Models.Utils.Encrypters;
 
 namespace ADD
 {
@@ -20,6 +21,7 @@ namespace ADD
         // Obiekt ten przechowuje zalogowanego użytkownika
         // Modele na podstawie tego obiektu będą wiedziały np czyje notatki wyświetlać
         ISession session = new Session();
+        IEncrypter encrypter = new SHA1Encrypter();
 
         public MainForm()
         {
@@ -40,20 +42,24 @@ namespace ADD
         private void MainForm_Load(object sender, EventArgs e)
         {
             ShowLoginView();
+            //ShowRegisterView();
         }
 
         /* Przy zmianie rozmiaru okna, będzie zawsze wyśrodkowany UserControl */
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            activeControl.Left = (this.Width - activeControl.Width) / 2;
-            activeControl.Top = (this.Height - activeControl.Height) / 2;
+            if(activeControl != null)
+            {
+                activeControl.Left = (this.Width - activeControl.Width) / 2;
+                activeControl.Top = (this.Height - activeControl.Height) / 2;
+            }
         }
         #endregion
    
         public void ShowLoginView()
         {
             var view = new LoginControl(this);
-            var model = new LoginModel(session);
+            var model = new LoginModel(session, encrypter);
             var presenter = new LoginPresenter(model, view);
 
             showView(view);
@@ -72,12 +78,22 @@ namespace ADD
 
         public void ShowProfileView()
         {
-            throw new NotImplementedException();
+            var view = new ProfileControl();
+            var model = new ProfileModel();
+            var presenter = new ProfilePresenter(model, view);
+
+            showView(view);
+            centerActualView();
         }
 
         public void ShowRegisterView()
         {
-            throw new NotImplementedException();
+            var view = new RegisterControl(this);
+            var model = new RegisterModel(encrypter);
+            var presenter = new RegisterPresenter(model, view);
+
+            showView(view);
+            centerActualView();
         }
 
         private void centerActualView()

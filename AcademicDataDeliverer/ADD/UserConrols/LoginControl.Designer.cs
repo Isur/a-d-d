@@ -94,6 +94,7 @@
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "REJESTRACJA";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.Register_Click);
             // 
             // loginProgressBar
             // 
@@ -125,6 +126,7 @@
             this.loginProgressBar.SuperscriptText = "°C";
             this.loginProgressBar.TabIndex = 6;
             this.loginProgressBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.loginProgressBar.Value = 68;
             this.loginProgressBar.Visible = false;
             // 
             // LoginControl
