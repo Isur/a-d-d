@@ -70,6 +70,33 @@ namespace ADD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rejestracja konta nie powiodła się.
+        /// </summary>
+        internal static string RegisterFailed {
+            get {
+                return ResourceManager.GetString("RegisterFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nie wszystkie pola w formularzu są poprawnie wypełnione.
+        /// </summary>
+        internal static string RegisterNotAllValuesAreValid {
+            get {
+                return ResourceManager.GetString("RegisterNotAllValuesAreValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rejestracja zakończona sukcesem.
+        /// </summary>
+        internal static string RegisterSuccess {
+            get {
+                return ResourceManager.GetString("RegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Użytkownik {0}: poprawne logowanie.
         /// </summary>
         internal static string SuccessfulLoginAttempt {

@@ -9,6 +9,7 @@ namespace ADD.Views
 {
     public interface IRegisterView
     {
+        #region FormControlsValue
         string Login { get; }
         string Password { get; }
         string FirstName { get; }
@@ -18,11 +19,28 @@ namespace ADD.Views
         string CollegeName { get; }
         string FacultyName { get; }
         string SpecializationName { get; }
+        #endregion
 
+        #region FormValidation
+        bool IsLoginValid { get; }
+        bool IsPasswordValid { get; }
+        bool IsFirstNameValid { get; }
+        bool IsSurnameValid { get; }
+        bool IsPhoneNumberValid { get; }
+        bool IsEmailValid { get; }
+        bool IsCollegeNameValid { get; }
+        bool IsFacultyNameValid { get; }
+        bool IsSpecializationNameValid { get; }
+
+        bool AreAllValuesValid();
+        #endregion
+
+        #region Events
         event Func<ICollection<College>> CollegeComboBoxDropDown;
         event Func<string, ICollection<Faculty>> FacultyComboBoxDropDown;
         event Func<string, ICollection<Specialization>> SpecializationComboBoxDropDown;
 
         event Func<User, string, bool> RegisterClick;
+        #endregion
     }
 }

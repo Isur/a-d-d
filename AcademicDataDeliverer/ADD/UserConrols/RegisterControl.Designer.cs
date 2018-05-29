@@ -57,6 +57,7 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(184, 22);
             this.textBoxLogin.TabIndex = 0;
+            this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
             // 
             // labelLogin
             // 
@@ -155,6 +156,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(184, 22);
             this.textBoxPassword.TabIndex = 10;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // textBoxFirstName
             // 
@@ -163,6 +165,7 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(184, 22);
             this.textBoxFirstName.TabIndex = 11;
+            this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
             // 
             // textBoxLastName
             // 
@@ -171,6 +174,7 @@
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(184, 22);
             this.textBoxLastName.TabIndex = 12;
+            this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
             // 
             // textBoxPhone
             // 
@@ -179,6 +183,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(184, 22);
             this.textBoxPhone.TabIndex = 13;
+            this.textBoxPhone.TextChanged += new System.EventHandler(this.textBoxPhone_TextChanged);
             // 
             // textBoxMail
             // 
@@ -187,6 +192,7 @@
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.Size = new System.Drawing.Size(184, 22);
             this.textBoxMail.TabIndex = 14;
+            this.textBoxMail.TextChanged += new System.EventHandler(this.textBoxMail_TextChanged);
             // 
             // comboBoxCollege
             // 
@@ -198,6 +204,7 @@
             this.comboBoxCollege.Size = new System.Drawing.Size(184, 24);
             this.comboBoxCollege.TabIndex = 15;
             this.comboBoxCollege.DropDown += new System.EventHandler(this.comboBoxCollege_DropDown);
+            this.comboBoxCollege.SelectedIndexChanged += new System.EventHandler(this.comboBoxCollege_SelectedIndexChanged);
             // 
             // comboBoxFaculty
             // 
@@ -209,6 +216,7 @@
             this.comboBoxFaculty.Size = new System.Drawing.Size(184, 24);
             this.comboBoxFaculty.TabIndex = 16;
             this.comboBoxFaculty.DropDown += new System.EventHandler(this.comboBoxFaculty_DropDown);
+            this.comboBoxFaculty.SelectedIndexChanged += new System.EventHandler(this.comboBoxFaculty_SelectedIndexChanged);
             // 
             // comboBoxSpecialization
             // 
@@ -220,6 +228,7 @@
             this.comboBoxSpecialization.Size = new System.Drawing.Size(184, 24);
             this.comboBoxSpecialization.TabIndex = 17;
             this.comboBoxSpecialization.DropDown += new System.EventHandler(this.comboBoxSpecialization_DropDown);
+            this.comboBoxSpecialization.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpecialization_SelectedIndexChanged);
             // 
             // buttonRegister
             // 

@@ -29,14 +29,28 @@ namespace ADD.Models
 
         public ICollection<Faculty> GetFacultiesInCollege(string collegeName)
         {
-            var college = CollegesRepository.GetList().Where(x => x.Name == collegeName).First();
-            return FacultiesRepository.GetList(college);
+            try
+            {
+                var college = CollegesRepository.GetList().Where(x => x.Name == collegeName).First();
+                return FacultiesRepository.GetList(college);
+            }
+            catch(Exception)
+            {
+                return new List<Faculty>();
+            }
         }
 
         public ICollection<Specialization> GetSpecializationsOnFaculty(string facultyName)
         {
-            var faculty = FacultiesRepository.GetList().Where(x => x.Name == facultyName).First();
-            return SpecializationsRepository.GetList(faculty);
+            try
+            {
+                var faculty = FacultiesRepository.GetList().Where(x => x.Name == facultyName).First();
+                return SpecializationsRepository.GetList(faculty);
+            }
+            catch(Exception)
+            {
+                return new List<Specialization>();
+            }
         }
 
         public bool RegisterNewUser(User newUser, string specializationName)

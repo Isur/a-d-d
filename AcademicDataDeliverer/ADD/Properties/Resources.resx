@@ -120,6 +120,15 @@
   <data name="FailedLoginAttempt" xml:space="preserve">
     <value>Użytkownik {0}: nieudana próba logowania</value>
   </data>
+  <data name="RegisterFailed" xml:space="preserve">
+    <value>Rejestracja konta nie powiodła się</value>
+  </data>
+  <data name="RegisterNotAllValuesAreValid" xml:space="preserve">
+    <value>Nie wszystkie pola w formularzu są poprawnie wypełnione</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>Rejestracja zakończona sukcesem</value>
+  </data>
   <data name="SuccessfulLoginAttempt" xml:space="preserve">
     <value>Użytkownik {0}: poprawne logowanie</value>
   </data>
