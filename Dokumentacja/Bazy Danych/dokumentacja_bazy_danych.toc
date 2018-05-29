@@ -8,9 +8,9 @@
 \contentsline {section}{\numberline {2}Rozwi\IeC {\k a}zania}{3}{section.2}
 \contentsline {subsubsection}{\numberline {2.0.1}Technologie}{3}{subsubsection.2.0.1}
 \contentsline {subsubsection}{\numberline {2.0.2}Oprogramowanie}{3}{subsubsection.2.0.2}
-\contentsline {section}{\numberline {3}Baza Danych}{3}{section.3}
-\contentsline {subsection}{\numberline {3.1}Diagram Encji}{3}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Diagram Relacji}{3}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}MySQL}{4}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}\IeC {\'S}rodowisko}{4}{subsection.3.4}
-\contentsline {section}{\numberline {4}Testy}{4}{section.4}
+\contentsline {section}{\numberline {3}Baza Danych}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Diagram Encji}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Diagram Relacji}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}MySQL}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}\IeC {\'S}rodowisko}{5}{subsection.3.4}
+\contentsline {section}{\numberline {4}Testy}{5}{section.4}
