@@ -35,6 +35,12 @@ namespace ADD
         {
             activeControl.Hide();
         }
+
+        private void logout()
+        {
+            if (session.User != null)
+                session.EndSession();
+        }
         #endregion
 
         #region Eventy z foremki
@@ -58,6 +64,7 @@ namespace ADD
    
         public void ShowLoginView()
         {
+            logout();
             var view = new LoginControl(this);
             var model = new LoginModel(session, encrypter);
             var presenter = new LoginPresenter(model, view);
@@ -68,7 +75,7 @@ namespace ADD
 
         public void ShowNoteView()
         {
-            var view = new NoteControl();
+            var view = new NoteControl(this);
             var model = new NoteModel();
             var presenter = new NotePresenter(model, view);
 

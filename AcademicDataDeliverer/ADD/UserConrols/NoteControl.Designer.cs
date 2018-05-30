@@ -33,11 +33,11 @@
             this.wydziałToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kierunekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.przedmiotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBoxNotes = new System.Windows.Forms.ListBox();
-            this.richTextBoxNote = new System.Windows.Forms.RichTextBox();
             this.mENUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFILToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wYLOGUJToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBoxNotes = new System.Windows.Forms.ListBox();
+            this.richTextBoxNote = new System.Windows.Forms.RichTextBox();
             this.menuStripSelect.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,22 +79,6 @@
             this.przedmiotToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.przedmiotToolStripMenuItem.Text = "Przedmiot";
             // 
-            // listBoxNotes
-            // 
-            this.listBoxNotes.FormattingEnabled = true;
-            this.listBoxNotes.Location = new System.Drawing.Point(4, 28);
-            this.listBoxNotes.Name = "listBoxNotes";
-            this.listBoxNotes.Size = new System.Drawing.Size(120, 277);
-            this.listBoxNotes.TabIndex = 1;
-            // 
-            // richTextBoxNote
-            // 
-            this.richTextBoxNote.Location = new System.Drawing.Point(131, 28);
-            this.richTextBoxNote.Name = "richTextBoxNote";
-            this.richTextBoxNote.Size = new System.Drawing.Size(266, 278);
-            this.richTextBoxNote.TabIndex = 2;
-            this.richTextBoxNote.Text = "";
-            // 
             // mENUToolStripMenuItem
             // 
             this.mENUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -115,6 +99,23 @@
             this.wYLOGUJToolStripMenuItem.Name = "wYLOGUJToolStripMenuItem";
             this.wYLOGUJToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wYLOGUJToolStripMenuItem.Text = "WYLOGUJ";
+            this.wYLOGUJToolStripMenuItem.Click += new System.EventHandler(this.wYLOGUJToolStripMenuItem_Click);
+            // 
+            // listBoxNotes
+            // 
+            this.listBoxNotes.FormattingEnabled = true;
+            this.listBoxNotes.Location = new System.Drawing.Point(4, 28);
+            this.listBoxNotes.Name = "listBoxNotes";
+            this.listBoxNotes.Size = new System.Drawing.Size(120, 277);
+            this.listBoxNotes.TabIndex = 1;
+            // 
+            // richTextBoxNote
+            // 
+            this.richTextBoxNote.Location = new System.Drawing.Point(131, 28);
+            this.richTextBoxNote.Name = "richTextBoxNote";
+            this.richTextBoxNote.Size = new System.Drawing.Size(266, 278);
+            this.richTextBoxNote.TabIndex = 2;
+            this.richTextBoxNote.Text = "";
             // 
             // NoteControl
             // 
@@ -125,6 +126,7 @@
             this.Controls.Add(this.menuStripSelect);
             this.Name = "NoteControl";
             this.Size = new System.Drawing.Size(400, 309);
+            this.Load += new System.EventHandler(this.NoteControl_Load);
             this.menuStripSelect.ResumeLayout(false);
             this.menuStripSelect.PerformLayout();
             this.ResumeLayout(false);

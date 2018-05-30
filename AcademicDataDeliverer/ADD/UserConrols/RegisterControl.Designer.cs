@@ -48,149 +48,135 @@
             this.comboBoxSpecialization = new System.Windows.Forms.ComboBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.progressBar = new CircularProgressBar.CircularProgressBar();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(140, 5);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLogin.Location = new System.Drawing.Point(105, 4);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(184, 22);
+            this.textBoxLogin.Size = new System.Drawing.Size(139, 20);
             this.textBoxLogin.TabIndex = 0;
             this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
             // 
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(88, 9);
-            this.labelLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLogin.Location = new System.Drawing.Point(66, 7);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(43, 17);
+            this.labelLogin.Size = new System.Drawing.Size(33, 13);
             this.labelLogin.TabIndex = 1;
             this.labelLogin.Text = "Login";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(88, 41);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPassword.Location = new System.Drawing.Point(66, 33);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(44, 17);
+            this.labelPassword.Size = new System.Drawing.Size(36, 13);
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Hasło";
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(97, 73);
-            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelName.Location = new System.Drawing.Point(73, 59);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(33, 17);
+            this.labelName.Size = new System.Drawing.Size(26, 13);
             this.labelName.TabIndex = 3;
             this.labelName.Text = "Imie";
             // 
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(65, 105);
-            this.labelLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLastName.Location = new System.Drawing.Point(49, 85);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(67, 17);
+            this.labelLastName.Size = new System.Drawing.Size(53, 13);
             this.labelLastName.TabIndex = 4;
             this.labelLastName.Text = "Nazwisko";
             // 
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Location = new System.Drawing.Point(27, 137);
-            this.labelPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPhone.Location = new System.Drawing.Point(20, 111);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(105, 17);
+            this.labelPhone.Size = new System.Drawing.Size(79, 13);
             this.labelPhone.TabIndex = 5;
             this.labelPhone.Text = "Numer telefonu";
             // 
             // labelMail
             // 
             this.labelMail.AutoSize = true;
-            this.labelMail.Location = new System.Drawing.Point(97, 169);
-            this.labelMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMail.Location = new System.Drawing.Point(73, 137);
             this.labelMail.Name = "labelMail";
-            this.labelMail.Size = new System.Drawing.Size(33, 17);
+            this.labelMail.Size = new System.Drawing.Size(26, 13);
             this.labelMail.TabIndex = 6;
             this.labelMail.Text = "Mail";
             // 
             // labelCollege
             // 
             this.labelCollege.AutoSize = true;
-            this.labelCollege.Location = new System.Drawing.Point(72, 202);
-            this.labelCollege.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCollege.Location = new System.Drawing.Point(54, 164);
             this.labelCollege.Name = "labelCollege";
-            this.labelCollege.Size = new System.Drawing.Size(62, 17);
+            this.labelCollege.Size = new System.Drawing.Size(48, 13);
             this.labelCollege.TabIndex = 7;
             this.labelCollege.Text = "Uczelnia";
             // 
             // labelFaculty
             // 
             this.labelFaculty.AutoSize = true;
-            this.labelFaculty.Location = new System.Drawing.Point(75, 235);
-            this.labelFaculty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFaculty.Location = new System.Drawing.Point(56, 191);
             this.labelFaculty.Name = "labelFaculty";
-            this.labelFaculty.Size = new System.Drawing.Size(57, 17);
+            this.labelFaculty.Size = new System.Drawing.Size(46, 13);
             this.labelFaculty.TabIndex = 8;
             this.labelFaculty.Text = "Wydział";
             // 
             // labelSpecialization
             // 
             this.labelSpecialization.AutoSize = true;
-            this.labelSpecialization.Location = new System.Drawing.Point(71, 268);
-            this.labelSpecialization.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSpecialization.Location = new System.Drawing.Point(53, 218);
             this.labelSpecialization.Name = "labelSpecialization";
-            this.labelSpecialization.Size = new System.Drawing.Size(64, 17);
+            this.labelSpecialization.Size = new System.Drawing.Size(49, 13);
             this.labelSpecialization.TabIndex = 9;
             this.labelSpecialization.Text = "Kierunek";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(140, 37);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Location = new System.Drawing.Point(105, 30);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(184, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(139, 20);
             this.textBoxPassword.TabIndex = 10;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(140, 69);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFirstName.Location = new System.Drawing.Point(105, 56);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(184, 22);
+            this.textBoxFirstName.Size = new System.Drawing.Size(139, 20);
             this.textBoxFirstName.TabIndex = 11;
             this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(140, 101);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLastName.Location = new System.Drawing.Point(105, 82);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(184, 22);
+            this.textBoxLastName.Size = new System.Drawing.Size(139, 20);
             this.textBoxLastName.TabIndex = 12;
             this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(140, 133);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPhone.Location = new System.Drawing.Point(105, 108);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(184, 22);
+            this.textBoxPhone.Size = new System.Drawing.Size(139, 20);
             this.textBoxPhone.TabIndex = 13;
             this.textBoxPhone.TextChanged += new System.EventHandler(this.textBoxPhone_TextChanged);
             // 
             // textBoxMail
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(140, 165);
-            this.textBoxMail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMail.Location = new System.Drawing.Point(105, 134);
             this.textBoxMail.Name = "textBoxMail";
-            this.textBoxMail.Size = new System.Drawing.Size(184, 22);
+            this.textBoxMail.Size = new System.Drawing.Size(139, 20);
             this.textBoxMail.TabIndex = 14;
             this.textBoxMail.TextChanged += new System.EventHandler(this.textBoxMail_TextChanged);
             // 
@@ -198,10 +184,9 @@
             // 
             this.comboBoxCollege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCollege.FormattingEnabled = true;
-            this.comboBoxCollege.Location = new System.Drawing.Point(140, 198);
-            this.comboBoxCollege.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxCollege.Location = new System.Drawing.Point(105, 161);
             this.comboBoxCollege.Name = "comboBoxCollege";
-            this.comboBoxCollege.Size = new System.Drawing.Size(184, 24);
+            this.comboBoxCollege.Size = new System.Drawing.Size(139, 21);
             this.comboBoxCollege.TabIndex = 15;
             this.comboBoxCollege.DropDown += new System.EventHandler(this.comboBoxCollege_DropDown);
             this.comboBoxCollege.SelectedIndexChanged += new System.EventHandler(this.comboBoxCollege_SelectedIndexChanged);
@@ -210,10 +195,9 @@
             // 
             this.comboBoxFaculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFaculty.FormattingEnabled = true;
-            this.comboBoxFaculty.Location = new System.Drawing.Point(140, 231);
-            this.comboBoxFaculty.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxFaculty.Location = new System.Drawing.Point(105, 188);
             this.comboBoxFaculty.Name = "comboBoxFaculty";
-            this.comboBoxFaculty.Size = new System.Drawing.Size(184, 24);
+            this.comboBoxFaculty.Size = new System.Drawing.Size(139, 21);
             this.comboBoxFaculty.TabIndex = 16;
             this.comboBoxFaculty.DropDown += new System.EventHandler(this.comboBoxFaculty_DropDown);
             this.comboBoxFaculty.SelectedIndexChanged += new System.EventHandler(this.comboBoxFaculty_SelectedIndexChanged);
@@ -222,20 +206,18 @@
             // 
             this.comboBoxSpecialization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSpecialization.FormattingEnabled = true;
-            this.comboBoxSpecialization.Location = new System.Drawing.Point(140, 265);
-            this.comboBoxSpecialization.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxSpecialization.Location = new System.Drawing.Point(105, 215);
             this.comboBoxSpecialization.Name = "comboBoxSpecialization";
-            this.comboBoxSpecialization.Size = new System.Drawing.Size(184, 24);
+            this.comboBoxSpecialization.Size = new System.Drawing.Size(139, 21);
             this.comboBoxSpecialization.TabIndex = 17;
             this.comboBoxSpecialization.DropDown += new System.EventHandler(this.comboBoxSpecialization_DropDown);
             this.comboBoxSpecialization.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpecialization_SelectedIndexChanged);
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(140, 299);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRegister.Location = new System.Drawing.Point(105, 243);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(184, 28);
+            this.buttonRegister.Size = new System.Drawing.Size(138, 23);
             this.buttonRegister.TabIndex = 18;
             this.buttonRegister.Text = "Zarejestruj";
             this.buttonRegister.UseVisualStyleBackColor = true;
@@ -251,7 +233,8 @@
             this.progressBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progressBar.InnerMargin = 2;
             this.progressBar.InnerWidth = -1;
-            this.progressBar.Location = new System.Drawing.Point(113, 117);
+            this.progressBar.Location = new System.Drawing.Point(85, 95);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar.MarqueeAnimationSpeed = 2000;
             this.progressBar.Name = "progressBar";
             this.progressBar.OuterColor = System.Drawing.Color.Gray;
@@ -260,7 +243,7 @@
             this.progressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.progressBar.ProgressWidth = 25;
             this.progressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.progressBar.Size = new System.Drawing.Size(110, 103);
+            this.progressBar.Size = new System.Drawing.Size(82, 84);
             this.progressBar.StartAngle = 270;
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -274,10 +257,21 @@
             this.progressBar.Value = 68;
             this.progressBar.Visible = false;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(4, 247);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.TabIndex = 20;
+            this.buttonBack.Text = "Wstecz";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // RegisterControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.comboBoxSpecialization);
@@ -298,9 +292,8 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.textBoxLogin);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterControl";
-            this.Size = new System.Drawing.Size(337, 336);
+            this.Size = new System.Drawing.Size(253, 273);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +321,6 @@
         private System.Windows.Forms.ComboBox comboBoxSpecialization;
         private System.Windows.Forms.Button buttonRegister;
         private CircularProgressBar.CircularProgressBar progressBar;
+        private System.Windows.Forms.Button buttonBack;
     }
 }
