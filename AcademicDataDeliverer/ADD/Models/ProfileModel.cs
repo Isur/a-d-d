@@ -8,5 +8,6 @@ namespace ADD.Models
 {
     public class ProfileModel : IProfileModel
     {
+        
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ADD.Views;
 
 namespace ADD.UserConrols
 {
@@ -20,6 +21,7 @@ namespace ADD.UserConrols
         {
             InitializeComponent();
         }
+
         #endregion
 
         #region INTERFACE
@@ -34,6 +36,14 @@ namespace ADD.UserConrols
 
         #endregion
 
+        private void ProfileControl_Load(object sender, EventArgs e)
+        {
+            
+        }
 
+        private void buttonBackToNote_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
