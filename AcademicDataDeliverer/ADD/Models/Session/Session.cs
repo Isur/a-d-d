@@ -20,5 +20,10 @@ namespace ADD.Models.Session
         {
             User = user;
         }
+
+        public void EndSession()
+        {
+            User = null;
+        }
     }
 }

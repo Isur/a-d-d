@@ -10,5 +10,6 @@ namespace ADD.Models.Session
     public interface ISession
     {
         User User { get; set; }
+        void EndSession();
     }
 }

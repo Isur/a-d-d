@@ -294,6 +294,11 @@ namespace ADD.UserConrols
                 MessageBox.Show(Properties.Resources.RegisterNotAllValuesAreValid);
             }
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            viewChanger.ShowLoginView();
+        }
         #endregion
         #region ON_CHANGE_EVENTS
         private void textBoxLogin_TextChanged(object sender, EventArgs e)
@@ -372,5 +377,7 @@ namespace ADD.UserConrols
             IsSpecializationNameValid = valid;
         }
         #endregion
+
+       
     }
 }
