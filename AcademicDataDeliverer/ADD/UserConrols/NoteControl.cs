@@ -90,7 +90,7 @@ namespace ADD.UserConrols
                             var materials = await taskMaterial;
                             foreach (var material in materials)
                             {
-                                TreeNode nodeMats = nodeSubject.Nodes.Add(material.Id.ToString() + "." + material.Title);
+                                TreeNode nodeMats = nodeSubject.Nodes.Add(material.Title);
                                 nodeMats.Tag = material;
                             }
 
@@ -106,8 +106,7 @@ namespace ADD.UserConrols
         {
             if(e.Node.Tag is Material)
             {
-                int id = int.Parse(e.Node.Text.Split('.')[0]);
-                richTextBoxNote.Text = MaterialsRepository.GetDetailsByID(id).Content;
+                richTextBoxNote.Text = MaterialsRepository.GetDetailsByID((e.Node.Tag as Material).Id).Content;
             }
         }
 
