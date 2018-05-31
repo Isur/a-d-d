@@ -14,6 +14,7 @@ namespace ADD.Views
         event Func<string, ICollection<Specialization>> SpecializationsGetItems;
         event Func<string, ICollection<Subject>> SubjectGetItems;
         event Func<string, ICollection<Material>> MaterialGetItems;
+        event Func<string, string, bool> SaveToFile;
         #endregion
     }
 }

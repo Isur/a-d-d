@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using DAL;
 using ADD.Models.Session;
 namespace ADD.Models
@@ -51,10 +52,7 @@ namespace ADD.Models
             {
                 var faculty = FacultiesRepository.GetList().Where(x => x.Name == facultyName).First();
                 var userspec = UsersSpecializationsRepository.GetDetailsByID(session.User.Id);
-                // Console.WriteLine(string.Format("Spec ID: {0}",userspec.Specialization_Id));
-                var userType = UsersRepository.GetDetailsByID(userspec.User_Id).AccountType;
-                // Console.WriteLine(string.Format("User {0} {1}", UsersRepository.GetDetailsByID(userspec.User_Id).FirstName, userType));
-                if (userType == 0)
+                if (session.User.AccountType == 0)
                     return SpecializationsRepository.GetList(faculty).Where(x => x.Id == userspec.Specialization_Id).ToList();
                 else return SpecializationsRepository.GetList(faculty);
             }
@@ -75,6 +73,19 @@ namespace ADD.Models
             catch(Exception)
             {
                 return new List<Subject>();
+            }
+        }
+
+        public bool SaveToFile(string location, string content)
+        {
+            try
+            {
+                File.WriteAllText(location, content);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

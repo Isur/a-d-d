@@ -14,5 +14,6 @@ namespace ADD.Models
         ICollection<Specialization> GetSpecializationsOnFaculty(string facultyName);
         ICollection<Subject> GetSubjectsFromSpecialization(string specializationName);
         ICollection<Material> GetMaterialsFromSubject(string subjectName);
+        bool SaveToFile(string location, string content);
     }
 }

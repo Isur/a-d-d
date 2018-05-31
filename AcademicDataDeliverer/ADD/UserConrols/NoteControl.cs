@@ -32,6 +32,7 @@ namespace ADD.UserConrols
         public event Func<string, ICollection<Specialization>> SpecializationsGetItems;
         public event Func<string, ICollection<Subject>> SubjectGetItems;
         public event Func<string, ICollection<Material>> MaterialGetItems;
+        public event Func<string, string, bool> SaveToFile;
         #endregion
 
         #region PUBLIC
@@ -89,7 +90,7 @@ namespace ADD.UserConrols
                             var materials = await taskMaterial;
                             foreach (var material in materials)
                             {
-                                TreeNode nodeMats = nodeSubject.Nodes.Add(material.Id.ToString());
+                                TreeNode nodeMats = nodeSubject.Nodes.Add(material.Id.ToString() + "." + material.Title);
                                 nodeMats.Tag = material;
                             }
 
@@ -105,7 +106,8 @@ namespace ADD.UserConrols
         {
             if(e.Node.Tag is Material)
             {
-                richTextBoxNote.Text = MaterialsRepository.GetDetailsByID(Int32.Parse(e.Node.Text)).Content;
+                int id = int.Parse(e.Node.Text.Split('.')[0]);
+                richTextBoxNote.Text = MaterialsRepository.GetDetailsByID(id).Content;
             }
         }
 
@@ -117,6 +119,36 @@ namespace ADD.UserConrols
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             viewChanger.ShowProfileView();
+        }
+
+        private void buttonDownload_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog selectLocation = new SaveFileDialog();
+            selectLocation.Filter = "txt files (*.txt)|*.txt";
+            DialogResult dial = selectLocation.ShowDialog();
+            string toSave = richTextBoxNote.Text;
+            if (dial == DialogResult.Cancel)
+                return;
+            if (selectLocation.FileName != "" && toSave != "")
+            {
+                saveToFile(selectLocation.FileName, toSave);
+            }
+            else if (selectLocation.FileName == "")
+                MessageBox.Show("Wybierz miesjce zapisu!");
+            else
+                MessageBox.Show("Wybierz notatkę!");
+        }
+        private async void saveToFile(string path, string contnent)
+        {
+            var task = new Task<bool>(() => {
+                return SaveToFile(path, contnent);
+            });
+            task.Start();
+            bool saved = await task;
+            if (saved)
+                MessageBox.Show("Zapisano!");
+            else
+                MessageBox.Show("Nie udało się zapisać!");
         }
     }
 }

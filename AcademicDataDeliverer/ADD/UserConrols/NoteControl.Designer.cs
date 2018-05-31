@@ -33,6 +33,7 @@
             this.treeViewNotes = new System.Windows.Forms.TreeView();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
+            this.buttonDownload = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBoxNote
@@ -105,10 +106,21 @@
             this.buttonProfile.UseVisualStyleBackColor = true;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
+            // buttonDownload
+            // 
+            this.buttonDownload.Location = new System.Drawing.Point(228, 0);
+            this.buttonDownload.Name = "buttonDownload";
+            this.buttonDownload.Size = new System.Drawing.Size(75, 23);
+            this.buttonDownload.TabIndex = 11;
+            this.buttonDownload.Text = "Pobierz";
+            this.buttonDownload.UseVisualStyleBackColor = true;
+            this.buttonDownload.Click += new System.EventHandler(this.buttonDownload_Click);
+            // 
             // NoteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonDownload);
             this.Controls.Add(this.buttonProfile);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.treeViewNotes);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.TreeView treeViewNotes;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonProfile;
+        private System.Windows.Forms.Button buttonDownload;
     }
 }
