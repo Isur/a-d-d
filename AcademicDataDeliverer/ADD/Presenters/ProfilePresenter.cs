@@ -14,6 +14,12 @@ namespace ADD.Presenters
         {
             this.model = model;
             this.view = view;
+
+            this.view.CollegeGetItems += model.GetColleges;
+            this.view.FacultyGetItems += model.GetFacultiesInCollege;
+            this.view.SpecializationsGetItems += model.GetSpecializationsOnFaculty;
+            this.view.SubjectGetItems += model.GetSubjectsFromSpecialization;
+            this.view.GetUser += model.GetUser;
         }
     }
 }

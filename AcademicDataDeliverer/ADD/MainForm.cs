@@ -85,8 +85,8 @@ namespace ADD
 
         public void ShowProfileView()
         {
-            var view = new ProfileControl();
-            var model = new ProfileModel();
+            var view = new ProfileControl(this);
+            var model = new ProfileModel(session);
             var presenter = new ProfilePresenter(model, view);
 
             showView(view);
