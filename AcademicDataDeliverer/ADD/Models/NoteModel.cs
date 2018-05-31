@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using ADD.Models.Session;
-using System.Windows.Forms;
-
 namespace ADD.Models
 {
     public class NoteModel : INoteModel
@@ -39,12 +37,7 @@ namespace ADD.Models
             try
             {
                 var subject = SubjectsRepository.GetList().Where(x => x.Name == subjectName).First();
-                var material = MaterialsRepository.GetList(subject);
-                foreach (var mat in material)
-                {
-                    MessageBox.Show(mat.Title);
-                }
-                return material;
+                return MaterialsRepository.GetList(subject);
             }
             catch(Exception)
             {
