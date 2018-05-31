@@ -27,11 +27,10 @@ namespace ADD.Models
             return CollegesRepository.GetList();
         }
 
-        public ICollection<Faculty> GetFacultiesInCollege(string collegeName)
+        public ICollection<Faculty> GetFacultiesInCollege(College college)
         {
             try
             {
-                var college = CollegesRepository.GetList().Where(x => x.Name == collegeName).First();
                 return FacultiesRepository.GetList(college);
             }
             catch(Exception)
@@ -40,11 +39,10 @@ namespace ADD.Models
             }
         }
 
-        public ICollection<Specialization> GetSpecializationsOnFaculty(string facultyName)
+        public ICollection<Specialization> GetSpecializationsOnFaculty(Faculty faculty)
         {
             try
             {
-                var faculty = FacultiesRepository.GetList().Where(x => x.Name == facultyName).First();
                 return SpecializationsRepository.GetList(faculty);
             }
             catch(Exception)
@@ -53,9 +51,8 @@ namespace ADD.Models
             }
         }
 
-        public bool RegisterNewUser(User newUser, string specializationName)
+        public bool RegisterNewUser(User newUser, Specialization specialization)
         {
-            var specialization = SpecializationsRepository.GetList().Where(x => x.Name == specializationName).First();
             var user = newUser;
             user.Password = encrypter.Encrypt(user.Password);
 

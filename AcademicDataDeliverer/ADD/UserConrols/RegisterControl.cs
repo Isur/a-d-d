@@ -178,9 +178,9 @@ namespace ADD.UserConrols
 
         #region EVENTS
         public event Func<ICollection<College>> CollegeComboBoxDropDown;
-        public event Func<string, ICollection<Faculty>> FacultyComboBoxDropDown;
-        public event Func<string, ICollection<Specialization>> SpecializationComboBoxDropDown;
-        public event Func<User, string, bool> RegisterClick;
+        public event Func<College, ICollection<Faculty>> FacultyComboBoxDropDown;
+        public event Func<Faculty, ICollection<Specialization>> SpecializationComboBoxDropDown;
+        public event Func<User, Specialization, bool> RegisterClick;
         #endregion
         public bool AreAllValuesValid()
         {
@@ -215,7 +215,7 @@ namespace ADD.UserConrols
             comboBoxCollege.Items.Clear();
             foreach (var college in colleges)
             {
-                comboBoxCollege.Items.Add(college.Name);
+                comboBoxCollege.Items.Add(college);
             }
         }
 
@@ -223,9 +223,9 @@ namespace ADD.UserConrols
         {
             progressBar.Visible = true;
 
-            var collegeName = CollegeName;
+            var college = comboBoxCollege.SelectedItem as College;
             var task = new Task<ICollection<Faculty>>(() => {
-                return FacultyComboBoxDropDown.Invoke(collegeName);
+                return FacultyComboBoxDropDown.Invoke(college);
             });
             task.Start();
 
@@ -235,7 +235,7 @@ namespace ADD.UserConrols
             comboBoxFaculty.Items.Clear();
             foreach (var faculty in faculties)
             {
-                comboBoxFaculty.Items.Add(faculty.Name);
+                comboBoxFaculty.Items.Add(faculty);
             }
         }
 
@@ -243,9 +243,9 @@ namespace ADD.UserConrols
         {
             progressBar.Visible = true;
 
-            var facultyName = FacultyName;
+            var faculty = comboBoxFaculty.SelectedItem as Faculty;
             var task = new Task<ICollection<Specialization>>(() => {
-                return SpecializationComboBoxDropDown.Invoke(facultyName);
+                return SpecializationComboBoxDropDown.Invoke(faculty);
             });
             task.Start();
 
@@ -255,7 +255,7 @@ namespace ADD.UserConrols
             comboBoxSpecialization.Items.Clear();
             foreach (var specialization in specializations)
             {
-                comboBoxSpecialization.Items.Add(specialization.Name);
+                comboBoxSpecialization.Items.Add(specialization);
             }
         }
         #endregion
@@ -266,11 +266,11 @@ namespace ADD.UserConrols
             {
                 progressBar.Visible = true;
 
-                var specializationName = SpecializationName;
+                var specialization = comboBoxSpecialization.SelectedItem as Specialization;
                 var userToCreate = new User(FirstName, Surname, PhoneNumber, Email, Login, Password, 0);
                 var task = new Task<bool>(() =>
                 {
-                    return RegisterClick.Invoke(userToCreate, specializationName);
+                    return RegisterClick.Invoke(userToCreate, specialization);
                 });
                 task.Start();
 
@@ -359,6 +359,8 @@ namespace ADD.UserConrols
             var content = selectedItem != null ? selectedItem.ToString() : string.Empty;
             var valid = content != string.Empty;
             IsCollegeNameValid = valid;
+            comboBoxFaculty.SelectedItem = null;
+            comboBoxSpecialization.SelectedItem = null;
         }
 
         private void comboBoxFaculty_SelectedIndexChanged(object sender, EventArgs e)
@@ -367,6 +369,7 @@ namespace ADD.UserConrols
             var content = selectedItem != null ? selectedItem.ToString() : string.Empty;
             var valid = content != string.Empty;
             IsFacultyNameValid = valid;
+            comboBoxSpecialization.SelectedItem = null;
         }
 
         private void comboBoxSpecialization_SelectedIndexChanged(object sender, EventArgs e)
@@ -376,8 +379,6 @@ namespace ADD.UserConrols
             var valid = content != string.Empty;
             IsSpecializationNameValid = valid;
         }
-        #endregion
-
-       
+        #endregion       
     }
 }

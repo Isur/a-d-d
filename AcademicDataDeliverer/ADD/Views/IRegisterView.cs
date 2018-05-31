@@ -37,10 +37,10 @@ namespace ADD.Views
 
         #region Events
         event Func<ICollection<College>> CollegeComboBoxDropDown;
-        event Func<string, ICollection<Faculty>> FacultyComboBoxDropDown;
-        event Func<string, ICollection<Specialization>> SpecializationComboBoxDropDown;
+        event Func<College, ICollection<Faculty>> FacultyComboBoxDropDown;
+        event Func<Faculty, ICollection<Specialization>> SpecializationComboBoxDropDown;
 
-        event Func<User, string, bool> RegisterClick;
+        event Func<User, Specialization, bool> RegisterClick;
         #endregion
     }
 }

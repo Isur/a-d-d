@@ -10,9 +10,9 @@ namespace ADD.Models
     public interface IRegisterModel
     {
         ICollection<College> GetColleges();
-        ICollection<Faculty> GetFacultiesInCollege(string collegeName);
-        ICollection<Specialization> GetSpecializationsOnFaculty(string facultyName);
+        ICollection<Faculty> GetFacultiesInCollege(College college);
+        ICollection<Specialization> GetSpecializationsOnFaculty(Faculty faculty);
 
-        bool RegisterNewUser(User newUser, string specializationName);
+        bool RegisterNewUser(User newUser, Specialization specialization);
     }
 }

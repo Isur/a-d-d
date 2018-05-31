@@ -39,5 +39,12 @@ namespace DAL
         #region Child Objects
 
         #endregion
+
+        #region METHODS
+        public override string ToString()
+        {
+            return Name;
+        }
+        #endregion
     }
 }
