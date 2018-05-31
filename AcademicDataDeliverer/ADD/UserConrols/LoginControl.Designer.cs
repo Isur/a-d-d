@@ -39,27 +39,24 @@
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(61, 4);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLogin.Location = new System.Drawing.Point(46, 3);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(191, 22);
+            this.textBoxLogin.Size = new System.Drawing.Size(144, 20);
             this.textBoxLogin.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(63, 37);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Location = new System.Drawing.Point(47, 30);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(189, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(143, 20);
             this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(63, 69);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLogin.Location = new System.Drawing.Point(47, 56);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(191, 28);
+            this.buttonLogin.Size = new System.Drawing.Size(143, 23);
             this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "LOGIN";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -68,29 +65,26 @@
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(7, 11);
-            this.labelLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLogin.Location = new System.Drawing.Point(5, 9);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(43, 17);
+            this.labelLogin.Size = new System.Drawing.Size(33, 13);
             this.labelLogin.TabIndex = 3;
             this.labelLogin.Text = "Login";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(8, 44);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPassword.Location = new System.Drawing.Point(6, 36);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(44, 17);
+            this.labelPassword.Size = new System.Drawing.Size(36, 13);
             this.labelPassword.TabIndex = 4;
             this.labelPassword.Text = "Hasło";
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(61, 106);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRegister.Location = new System.Drawing.Point(46, 86);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(192, 28);
+            this.buttonRegister.Size = new System.Drawing.Size(144, 23);
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "REJESTRACJA";
             this.buttonRegister.UseVisualStyleBackColor = true;
@@ -106,7 +100,8 @@
             this.loginProgressBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.loginProgressBar.InnerMargin = 2;
             this.loginProgressBar.InnerWidth = -1;
-            this.loginProgressBar.Location = new System.Drawing.Point(86, 11);
+            this.loginProgressBar.Location = new System.Drawing.Point(64, 9);
+            this.loginProgressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginProgressBar.MarqueeAnimationSpeed = 2000;
             this.loginProgressBar.Name = "loginProgressBar";
             this.loginProgressBar.OuterColor = System.Drawing.Color.Gray;
@@ -115,7 +110,7 @@
             this.loginProgressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.loginProgressBar.ProgressWidth = 25;
             this.loginProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.loginProgressBar.Size = new System.Drawing.Size(110, 103);
+            this.loginProgressBar.Size = new System.Drawing.Size(82, 84);
             this.loginProgressBar.StartAngle = 270;
             this.loginProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.loginProgressBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -131,7 +126,7 @@
             // 
             // LoginControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.loginProgressBar);
             this.Controls.Add(this.buttonRegister);
@@ -140,9 +135,8 @@
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLogin);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginControl";
-            this.Size = new System.Drawing.Size(265, 138);
+            this.Size = new System.Drawing.Size(199, 112);
             this.ResumeLayout(false);
             this.PerformLayout();
 

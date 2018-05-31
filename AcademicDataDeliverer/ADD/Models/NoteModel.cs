@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
-
+using ADD.Models.Session;
 namespace ADD.Models
 {
     public class NoteModel : INoteModel
     {
+        private ISession session;
+        public NoteModel(ISession session)
+        {
+            this.session = session;
+        }
         public ICollection<College> GetColleges()
         {
             return CollegesRepository.GetList();
@@ -45,7 +50,13 @@ namespace ADD.Models
             try
             {
                 var faculty = FacultiesRepository.GetList().Where(x => x.Name == facultyName).First();
-                return SpecializationsRepository.GetList(faculty);
+                var userspec = UsersSpecializationsRepository.GetDetailsByID(session.User.Id);
+                // Console.WriteLine(string.Format("Spec ID: {0}",userspec.Specialization_Id));
+                var userType = UsersRepository.GetDetailsByID(userspec.User_Id).AccountType;
+                // Console.WriteLine(string.Format("User {0} {1}", UsersRepository.GetDetailsByID(userspec.User_Id).FirstName, userType));
+                if (userType == 0)
+                    return SpecializationsRepository.GetList(faculty).Where(x => x.Id == userspec.Specialization_Id).ToList();
+                else return SpecializationsRepository.GetList(faculty);
             }
             catch (Exception)
             {

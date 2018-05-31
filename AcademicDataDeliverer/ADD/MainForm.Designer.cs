@@ -32,11 +32,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 541);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(527, 235);
+            this.ClientSize = new System.Drawing.Size(584, 440);
+            this.MinimumSize = new System.Drawing.Size(600, 200);
             this.Name = "MainForm";
             this.Text = "Academic Data Delivery";
             this.Load += new System.EventHandler(this.MainForm_Load);

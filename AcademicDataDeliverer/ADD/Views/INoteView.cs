@@ -12,6 +12,8 @@ namespace ADD.Views
         event Func<ICollection<College>> CollegeGetItems;
         event Func<string, ICollection<Faculty>> FacultyGetItems;
         event Func<string, ICollection<Specialization>> SpecializationsGetItems;
+        event Func<string, ICollection<Subject>> SubjectGetItems;
+        event Func<string, ICollection<Material>> MaterialGetItems;
         #endregion
     }
 }

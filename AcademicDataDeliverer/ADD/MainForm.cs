@@ -76,7 +76,7 @@ namespace ADD
         public void ShowNoteView()
         {
             var view = new NoteControl(this);
-            var model = new NoteModel();
+            var model = new NoteModel(session);
             var presenter = new NotePresenter(model, view);
 
             showView(view);
