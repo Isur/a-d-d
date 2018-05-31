@@ -23,16 +23,16 @@ namespace DAL
         }
 
         #region Constants
-        private const string SP_GET_ALL = "SELECT  `Id`, `Content`, `Subject_Id` FROM materials";
-        private const string SP_GET_FILTER = "SELECT  `Id`, `Content`, `Subject_Id` FROM materials {0}";
+        private const string SP_GET_ALL = "SELECT  `Id`, `Title`, `Content`, `Subject_Id` FROM materials";
+        private const string SP_GET_FILTER = "SELECT  `Id`, `Title`, `Content`, `Subject_Id` FROM materials {0}";
         private const string SP_GET_BYPAGE = "SELECT * FROM materials {1} ORDER BY {0} LIMIT {2}, {3}; SELECT COUNT(*) FROM materials {1};";
-        private const string SP_GET_BYID = "SELECT  `Id`, `Content`, `Subject_Id` FROM materials WHERE Id = @ref_id";
-        private const string SP_ADD = "INSERT INTO materials ( Id, Content, Subject_Id) VALUES ( @Id, @Content, @Subject_Id) ";
-        private const string SP_ADD1 = "INSERT INTO materials ( Id, Content, Subject_Id) VALUES ( @Id, @Content, @Subject_Id) SELECT @Id = @@IDENTITY";
-        private const string SP_UPDATE = "UPDATE materials SET Content = @Content, Subject_Id = @Subject_Id WHERE Id = @Id";
+        private const string SP_GET_BYID = "SELECT  `Id`, `Title`, `Content`, `Subject_Id` FROM materials WHERE Id = @ref_id";
+        private const string SP_ADD = "INSERT INTO materials ( Id, Title, Content, Subject_Id) VALUES ( @Id, @Content, @Subject_Id) ";
+        private const string SP_ADD1 = "INSERT INTO materials ( Id,Title, Content, Subject_Id) VALUES ( @Id, @Content, @Subject_Id) SELECT @Id = @@IDENTITY";
+        private const string SP_UPDATE = "UPDATE materials SET Title = @Title, Content = @Content, Subject_Id = @Subject_Id WHERE Id = @Id";
         private const string SP_DELETE = "DELETE FROM materials WHERE Id=@ref_id";
         private const string SP_DELETE_FILTER = "DELETE FROM materials {0}";
-        private const string SP_GET_LOOKUP = "SELECT Id, Content FROM materials";
+        private const string SP_GET_LOOKUP = "SELECT Id, Title, Content FROM materials";
         #endregion
 
         #region materials - Constructor
@@ -248,7 +248,7 @@ namespace DAL
         /// <summary>
         /// Creates a new materials row.
         /// </summary>
-        public static int Add(int Id, string Content, int Subject_Id)
+        public static int Add(int Id, string Title, string Content, int Subject_Id)
         {
             try
             {
@@ -259,6 +259,7 @@ namespace DAL
                         cmd.CommandType = CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Id", Id);
+                        cmd.Parameters.AddWithValue("@Title", Title);
                         cmd.Parameters.AddWithValue("@Content", Content);
                         cmd.Parameters.AddWithValue("@Subject_Id", Subject_Id);
                         cn.Open();
@@ -283,7 +284,7 @@ namespace DAL
         /// <summary>
         /// Updates a materials
         /// </summary>
-        public static bool Update(int Id, string Content, int Subject_Id)
+        public static bool Update(int Id, string Title, string Content, int Subject_Id)
         {
             try
             {
@@ -294,6 +295,7 @@ namespace DAL
                         cmd.CommandType = CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Id", Id);
+                        cmd.Parameters.AddWithValue("@Title", Title);
                         cmd.Parameters.AddWithValue("@Content", Content);
                         cmd.Parameters.AddWithValue("@Subject_Id", Subject_Id);
                         cn.Open();
@@ -595,6 +597,7 @@ namespace DAL
                         cmd.CommandType = CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Id", objmaterials.Id);
+                        cmd.Parameters.AddWithValue("@Title", objmaterials.Title);
                         cmd.Parameters.AddWithValue("@Content", objmaterials.Content);
                         cmd.Parameters.AddWithValue("@Subject_Id", objmaterials.Subject_Id);
                         cn.Open();
@@ -630,6 +633,7 @@ namespace DAL
                         cmd.CommandType = CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Id", objmaterials.Id);
+                        cmd.Parameters.AddWithValue("@Title", objmaterials.Title);
                         cmd.Parameters.AddWithValue("@Content", objmaterials.Content);
                         cmd.Parameters.AddWithValue("@Subject_Id", objmaterials.Subject_Id);
                         cn.Open();
