@@ -14,5 +14,6 @@ namespace ADD.Models
         ICollection<Subject> GetSubjectsFromSpecialization(string specializationName);
 
         User GetUser();
+        bool CancelSub(Specialization specialization);
     }
 }

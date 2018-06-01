@@ -20,6 +20,7 @@ namespace ADD.Presenters
             this.view.SpecializationsGetItems += model.GetSpecializationsOnFaculty;
             this.view.SubjectGetItems += model.GetSubjectsFromSpecialization;
             this.view.GetUser += model.GetUser;
+            this.view.DeleteSubscription += model.CancelSub;
         }
     }
 }

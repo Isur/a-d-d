@@ -14,6 +14,20 @@ namespace ADD.Models
         {
             this.session = session;
         }
+
+        public bool CancelSub(Specialization specialization)
+        {
+            try
+            {
+                UsersSpecializationsRepository.DeleteFilter(string.Format("User_id = {0} AND Specialization_Id = {1}", session.User.Id, specialization.Id));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public ICollection<College> GetColleges()
         {
             return CollegesRepository.GetList();

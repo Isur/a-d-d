@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ADD.Views;
+using ADD.Models;
+using ADD.Presenters;
 using DAL;
 
 namespace ADD.UserConrols
@@ -65,7 +67,6 @@ namespace ADD.UserConrols
         public event Func<string, ICollection<Faculty>> FacultyGetItems;
         public event Func<string, ICollection<Specialization>> SpecializationsGetItems;
         public event Func<string, ICollection<Subject>> SubjectGetItems;
-        public event Func<Specialization, bool> AddSubscription;
         public event Func<Specialization, bool> DeleteSubscription;
         public event Func<User> GetUser;
         #endregion
@@ -78,17 +79,18 @@ namespace ADD.UserConrols
 
         #endregion
 
-        private async void ProfileControl_Load(object sender, EventArgs e)
+        private async void loadTree()
         {
-            loadingProgressBar.Visible = true;
 
+            loadingProgressBar.Visible = true;
+            treeViewSubscribed.Nodes.Clear();
             User user = GetUser();
 
             textBoxUserLogin.Text = user.Login;
             textBoxUserName.Text = user.FirstName + " " + user.LastName;
             textBoxUserPhone.Text = user.PhoneNumber;
             textBoxUserMail.Text = user.MailAddress;
-            
+
             var task = new Task<ICollection<College>>(() =>
             {
                 return CollegeGetItems.Invoke();
@@ -118,6 +120,7 @@ namespace ADD.UserConrols
                     foreach (var specialization in specializations)
                     {
                         TreeNode nodeSpecialization = nodeFaculty.Nodes.Add(specialization.Name);
+                        nodeSpecialization.Tag = specialization;
                         var taskSubject = new Task<ICollection<Subject>>(() => { return SubjectGetItems.Invoke(specialization.Name); });
                         taskSubject.Start();
 
@@ -134,6 +137,10 @@ namespace ADD.UserConrols
 
             loadingProgressBar.Visible = false;
         }
+        private void ProfileControl_Load(object sender, EventArgs e)
+        {
+            loadTree();
+        }
 
         private void buttonBackToNote_Click(object sender, EventArgs e)
         {
@@ -143,6 +150,39 @@ namespace ADD.UserConrols
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             viewChanger.ShowLoginView();
+        }
+
+        private void buttonAddSubscribe_Click(object sender, EventArgs e)
+        {
+            var sub = new Subscribe(GetUser(), this);
+            var subModel = new SubscribeModel();
+            var subPresenter = new SubscribePresenter(subModel,sub);
+            sub.Show();
+        }
+
+        public void Reload()
+        {
+            loadTree();
+        }
+
+        private void buttonDeleteSubscribe_Click(object sender, EventArgs e)
+        {
+     
+            if(treeViewSubscribed.SelectedNode != null && treeViewSubscribed.SelectedNode.Tag is Specialization)
+            {
+                string info = string.Format("Czy jesteś pewny, że chcesz usunąć subskrypcję z {0}", treeViewSubscribed.SelectedNode.Text);
+                DialogResult dr = MessageBox.Show(info, "Anuluj subskrypcję", MessageBoxButtons.YesNo);
+                if(dr == DialogResult.Yes)
+                {
+                    if (DeleteSubscription(treeViewSubscribed.SelectedNode.Tag as Specialization))
+                    { MessageBox.Show("Usunięto pomyślnie."); Reload(); }
+                    else
+                        MessageBox.Show("Nie udało się.");
+                }
+            }else
+            {
+                MessageBox.Show("Wybierz specjalizację do anulowania!");
+            }
         }
     }
 }

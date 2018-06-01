@@ -12,9 +12,9 @@ namespace ADD.Views
         event Func<string, ICollection<Faculty>> FacultyGetItems;
         event Func<string, ICollection<Specialization>> SpecializationsGetItems;
         event Func<string, ICollection<Subject>> SubjectGetItems;
-        event Func<Specialization, bool> AddSubscription;
         event Func<Specialization, bool> DeleteSubscription;
         event Func<User> GetUser;
+        void Reload();
         string FirstName { get; }
         string LastName { get; }
         string Mail { get; }

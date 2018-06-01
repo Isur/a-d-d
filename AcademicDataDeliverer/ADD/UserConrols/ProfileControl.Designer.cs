@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Colleges");
             this.labelUserName = new System.Windows.Forms.Label();
             this.buttonAddSubscribe = new System.Windows.Forms.Button();
             this.labelUserMail = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.buttonAddSubscribe.TabIndex = 4;
             this.buttonAddSubscribe.Text = "Subskrybuj Nowy";
             this.buttonAddSubscribe.UseVisualStyleBackColor = true;
+            this.buttonAddSubscribe.Click += new System.EventHandler(this.buttonAddSubscribe_Click);
             // 
             // labelUserMail
             // 
@@ -95,10 +95,6 @@
             // 
             this.treeViewSubscribed.Location = new System.Drawing.Point(3, 3);
             this.treeViewSubscribed.Name = "treeViewSubscribed";
-            treeNode1.Name = "NodeColleges";
-            treeNode1.Text = "Colleges";
-            this.treeViewSubscribed.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
             this.treeViewSubscribed.Size = new System.Drawing.Size(209, 259);
             this.treeViewSubscribed.TabIndex = 8;
             // 
@@ -110,6 +106,7 @@
             this.buttonDeleteSubscribe.TabIndex = 9;
             this.buttonDeleteSubscribe.Text = "Usuń wybraną subskrybcję";
             this.buttonDeleteSubscribe.UseVisualStyleBackColor = true;
+            this.buttonDeleteSubscribe.Click += new System.EventHandler(this.buttonDeleteSubscribe_Click);
             // 
             // buttonLogOut
             // 
@@ -134,6 +131,7 @@
             // 
             this.textBoxUserName.Location = new System.Drawing.Point(353, 76);
             this.textBoxUserName.Name = "textBoxUserName";
+            this.textBoxUserName.ReadOnly = true;
             this.textBoxUserName.Size = new System.Drawing.Size(226, 20);
             this.textBoxUserName.TabIndex = 12;
             // 
@@ -141,6 +139,7 @@
             // 
             this.textBoxUserLogin.Location = new System.Drawing.Point(353, 103);
             this.textBoxUserLogin.Name = "textBoxUserLogin";
+            this.textBoxUserLogin.ReadOnly = true;
             this.textBoxUserLogin.Size = new System.Drawing.Size(226, 20);
             this.textBoxUserLogin.TabIndex = 13;
             // 
@@ -148,6 +147,7 @@
             // 
             this.textBoxUserMail.Location = new System.Drawing.Point(353, 129);
             this.textBoxUserMail.Name = "textBoxUserMail";
+            this.textBoxUserMail.ReadOnly = true;
             this.textBoxUserMail.Size = new System.Drawing.Size(226, 20);
             this.textBoxUserMail.TabIndex = 14;
             // 
@@ -155,6 +155,7 @@
             // 
             this.textBoxUserPhone.Location = new System.Drawing.Point(353, 155);
             this.textBoxUserPhone.Name = "textBoxUserPhone";
+            this.textBoxUserPhone.ReadOnly = true;
             this.textBoxUserPhone.Size = new System.Drawing.Size(226, 20);
             this.textBoxUserPhone.TabIndex = 15;
             // 
