@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using DAL;
 using ADD.Models.Session;
+using System.Windows.Forms;
+
 namespace ADD.Models
 {
     public class NoteModel : INoteModel
@@ -51,9 +53,19 @@ namespace ADD.Models
             try
             {
                 var faculty = FacultiesRepository.GetList().Where(x => x.Name == facultyName).First();
-                var userspec = UsersSpecializationsRepository.GetDetailsByID(session.User.Id);
                 if (session.User.AccountType == 0)
-                    return SpecializationsRepository.GetList(faculty).Where(x => x.Id == userspec.Specialization_Id).ToList();
+                {
+                    var resultSpecializations = new List<Specialization>();
+                    var userSpecializations = UsersSpecializationsRepository.GetList().Where(x => x.User_Id == session.User.Id);
+                    var specializations = SpecializationsRepository.GetList(faculty);
+
+                    foreach (var userSpec in userSpecializations)
+                    {
+                        resultSpecializations.AddRange(specializations.Where(x => x.Id == userSpec.Specialization_Id));
+                    }
+
+                    return resultSpecializations;
+                }
                 else return SpecializationsRepository.GetList(faculty);
             }
             catch (Exception)
