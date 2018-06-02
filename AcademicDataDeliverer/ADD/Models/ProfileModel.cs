@@ -30,7 +30,14 @@ namespace ADD.Models
 
         public ICollection<College> GetColleges()
         {
-            return CollegesRepository.GetList();
+            try
+            {
+                return CollegesRepository.GetList();
+            }
+            catch (Exception)
+            {
+                return new List<College>();
+            }
         }
 
         public ICollection<Faculty> GetFacultiesInCollege(string collegeName)
