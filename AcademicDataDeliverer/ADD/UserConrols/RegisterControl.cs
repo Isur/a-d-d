@@ -11,6 +11,7 @@ using ADD.Views;
 using DAL;
 using System.Collections;
 using System.Text.RegularExpressions;
+using ADD.Models.Results;
 
 namespace ADD.UserConrols
 {
@@ -180,7 +181,7 @@ namespace ADD.UserConrols
         public event Func<ICollection<College>> CollegeComboBoxDropDown;
         public event Func<College, ICollection<Faculty>> FacultyComboBoxDropDown;
         public event Func<Faculty, ICollection<Specialization>> SpecializationComboBoxDropDown;
-        public event Func<User, Specialization, bool> RegisterClick;
+        public event Func<User, Specialization, Result> RegisterClick;
         #endregion
         public bool AreAllValuesValid()
         {
@@ -196,6 +197,33 @@ namespace ADD.UserConrols
                 control.BackColor = Color.White;
             else
                 control.BackColor = Color.Red;
+        }
+
+        private async void register()
+        {
+            progressBar.Visible = true;
+
+            var specialization = comboBoxSpecialization.SelectedItem as Specialization;
+            var userToCreate = new User(FirstName, Surname, PhoneNumber, Email, Login, Password, 0);
+            var task = new Task<Result>(() =>
+            {
+                return RegisterClick.Invoke(userToCreate, specialization);
+            });
+            task.Start();
+
+            var registerResult = await task;
+
+            progressBar.Visible = false;
+
+            if (!registerResult.Success)
+            {
+                MessageBox.Show(registerResult.ErrorMessage);
+            }
+            else
+            {
+                MessageBox.Show(Properties.Resources.RegisterSuccess);
+                viewChanger.ShowLoginView();
+            }
         }
         #endregion
 
@@ -260,34 +288,11 @@ namespace ADD.UserConrols
         }
         #endregion
         #region CLICK_EVENTS
-        private async void buttonRegister_Click(object sender, EventArgs e)
+        private void buttonRegister_Click(object sender, EventArgs e)
         {
             if (AreAllValuesValid())
             {
-                progressBar.Visible = true;
-
-                var specialization = comboBoxSpecialization.SelectedItem as Specialization;
-                var userToCreate = new User(FirstName, Surname, PhoneNumber, Email, Login, Password, 0);
-                var task = new Task<bool>(() =>
-                {
-                    return RegisterClick.Invoke(userToCreate, specialization);
-                });
-                task.Start();
-
-                var registerResult = await task;
-
-                progressBar.Visible = false;
-
-                if (registerResult)
-                {
-                    MessageBox.Show(Properties.Resources.RegisterSuccess);
-                    viewChanger.ShowLoginView();
-                }
-                else
-                {
-                    //TODO: obsługa błędów (może model powinien zwracać coś więcej niż bool, żeby się dało identyfikować problem...)
-                    MessageBox.Show(Properties.Resources.RegisterFailed);
-                }
+                register();
             }
             else
             {

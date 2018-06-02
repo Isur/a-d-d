@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using ADD.Models.Utils.Encrypters;
+using ADD.Models.Results;
 
 namespace ADD.Models
 {
@@ -51,8 +52,25 @@ namespace ADD.Models
             }
         }
 
-        public bool RegisterNewUser(User newUser, Specialization specialization)
+        public Result RegisterNewUser(User newUser, Specialization specialization)
         {
+            try
+            {
+                return register(newUser, specialization);
+            }
+            catch(Exception ex)
+            {
+                return new Result(false, ex.Message);
+            }
+        }
+
+        private Result register(User newUser, Specialization specialization)
+        {
+            if(loginAlreadyExists(newUser.Login))
+            {
+                return new Result(false, Properties.Resources.LoginIsAlreadyTaken);
+            }
+
             var user = newUser;
             user.Password = encrypter.Encrypt(user.Password);
 
@@ -63,7 +81,13 @@ namespace ADD.Models
             var userSpecialization = new UserSpecialization(user.Id, specialization.Id);
             UsersSpecializationsRepository.Add(userSpecialization);
 
-            return true;
+            return new Result(true);
+        }
+
+        private bool loginAlreadyExists(string login)
+        {
+            var users = UsersRepository.GetList().Where(x => x.Login == login);
+            return users.Count() > 0;
         }
     }
 }

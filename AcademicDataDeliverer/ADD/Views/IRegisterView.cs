@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using ADD.Models.Results;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace ADD.Views
         event Func<College, ICollection<Faculty>> FacultyComboBoxDropDown;
         event Func<Faculty, ICollection<Specialization>> SpecializationComboBoxDropDown;
 
-        event Func<User, Specialization, bool> RegisterClick;
+        event Func<User, Specialization, Result> RegisterClick;
         #endregion
     }
 }

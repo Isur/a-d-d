@@ -70,6 +70,15 @@ namespace ADD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Podany login jest już zajęty.
+        /// </summary>
+        internal static string LoginIsAlreadyTaken {
+            get {
+                return ResourceManager.GetString("LoginIsAlreadyTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rejestracja konta nie powiodła się.
         /// </summary>
         internal static string RegisterFailed {
