@@ -4,12 +4,20 @@
 \BOOKMARK [3][-]{subsubsection.1.2.1}{Logowanie i Rejestracja}{subsection.1.2}% 4
 \BOOKMARK [3][-]{subsubsection.1.2.2}{Przypasanie do grup}{subsection.1.2}% 5
 \BOOKMARK [3][-]{subsubsection.1.2.3}{Notatki}{subsection.1.2}% 6
-\BOOKMARK [1][-]{section.2}{Rozwiazania}{}% 7
-\BOOKMARK [2][-]{subsubsection.2.0.1}{Technologie}{section.2}% 8
-\BOOKMARK [3][-]{subsubsection.2.0.2}{Oprogramowanie}{subsubsection.2.0.1}% 9
+\BOOKMARK [1][-]{section.2}{Technologie}{}% 7
+\BOOKMARK [2][-]{subsection.2.1}{Oprogramowanie}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.2}{Technologie}{section.2}% 9
 \BOOKMARK [1][-]{section.3}{Baza Danych}{}% 10
 \BOOKMARK [2][-]{subsection.3.1}{Diagram Encji}{section.3}% 11
 \BOOKMARK [2][-]{subsection.3.2}{Diagram Relacji}{section.3}% 12
 \BOOKMARK [2][-]{subsection.3.3}{MySQL}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.4}{Srodowisko}{section.3}% 14
-\BOOKMARK [1][-]{section.4}{Testy}{}% 15
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Zapytania dotyczace 'Colleges'}{subsection.3.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Zapytania dotyczace 'Faculties'}{subsection.3.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Zapytania dotyczace 'Lecturers'}{subsection.3.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Zapytania dotyczace 'Materials'}{subsection.3.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.3.5}{Zapytania dotyczace 'Specializations'}{subsection.3.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.3.6}{Zapytania dotyczace 'Subjects'}{subsection.3.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.3.7}{Zapytania dotyczace 'Users'}{subsection.3.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.3.8}{Zapytania dotyczace 'UserSpecializations'}{subsection.3.3}% 21
+\BOOKMARK [2][-]{subsection.3.4}{Srodowisko}{section.3}% 22
+\BOOKMARK [1][-]{section.4}{Testy}{}% 23

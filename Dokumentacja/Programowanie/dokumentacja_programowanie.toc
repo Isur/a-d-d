@@ -11,9 +11,11 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Logowanie i Rejestracja}{4}{subsubsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Przypasanie do grup}{4}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Notatki}{4}{subsubsection.2.3.3}
-\contentsline {section}{\numberline {3}Technologie}{4}{section.3}
-\contentsline {section}{\numberline {4}Implementacja}{4}{section.4}
-\contentsline {subsection}{\numberline {4.1}Podzia\IeC {\l } projektu na pliki}{4}{subsection.4.1}
+\contentsline {section}{\numberline {3}Technologie}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Oprogramowanie}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Technologie}{5}{subsection.3.2}
+\contentsline {section}{\numberline {4}Implementacja}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Podzia\IeC {\l } projektu na pliki}{5}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Schemat Modelu Obiektowego}{5}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Interfejsy}{5}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Rozwi\IeC {\k a}zania}{5}{subsection.4.4}

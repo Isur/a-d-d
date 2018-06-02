@@ -41,24 +41,31 @@
 	\begin{tabular}{|p{0.7\textwidth}|c|c|}
 	\hline
 	Co & Kto & Kiedy \\	\hline\hline
+	Projekt bazy danych & Bednarczyk & 04.2018 \\ \hline
+	Utworzenie bazy danych & Grajewski & 04.2018 \\ \hline
 	Połączenie z bazą danych & Grajewski & 10.05.2018 \\ \hline
-	Projekty graficzne & Bednarczyk & 20.05.2018 \\ \hline
-	Szkielet struktury MVP & Bednarczyk & 23.05.2018 \\	\hline
-	Wyśrodkowanie elementów widocznych z możliwością rozszerzenia okna & Bednarczyk & 23.05.2018 \\ \hline
-	Logowanie & Grajewski & 26.05.2018 \\ \hline
+	Projekty graficzne & Bednarczyk & 13.05.2018 \\ \hline
+	\makecell[l]{Szkielet struktury MVP \\
+	Wyśrodkowanie widoku z możliwością rozszerzenia okna} & Bednarczyk & 23.05.2018 \\ \hline
+	Logowanie & Kwaśniok & 26.05.2018 \\ \hline
+	Sesja i Hash & Grajewski & 26.05.2018 \\ \hline
+	Przełączanie między widokami & Grajewski & 28.05.2018 \\ \hline
 	\makecell[l]{Wyświetlanie listy notatek\\
 	Wyświetlanie notatki\\
 	Zapis notatki do pliku\\
 	Wyświetlanie danych użytkownika w profilu\\
 	Wyświetlanie listy subskrybowanych kierunków w profilu}& Bednarczyk & 31.05.2018 \\ \hline
-	Rejestracja & Grajewski & 31.05.2018\\ \hline
+	Rejestracja & Kwaśniok & 31.05.2018\\ \hline
+	Dodawanie i anulowanie subskrypcji dla kierunku & Bednarczyk & 02.06.2018 \\ \hline
+	Testowanie i poprawki & \makecell{Bednarczyk \\Grajewski \\Kwaśniok} & 03.06.2018 \\ \hline
 	\hline
 	Dokumentacja & \makecell{Bednarczyk} & Cały czas\\ \hline
 	\end{tabular}
 	\clearpage
 	\section{Opis projektu}
 		\subsection{Opis}
-			Aplikacja dla studentów umożliwiająca łatwą i szybką wymianę notatek.
+			Aplikacja dla studentów umożliwiająca szybki i łatwy podgląd dostępnych materiałów! Każdy student może wybrać kierunki studiów, którymi jest zainteresowany i oglądać przypisane do nich notatki! W każdej chwili  może dodać nowe lub usunąć nieinteresujące go kierunki ze swojej listy. Aplikacja jest prosta w użytkowaniu, jednak wymaga połączenia z internetem.
+
 		\subsection{Projekt UI}
 			\subsubsection{Logowanie}
 				Obrazek.png
@@ -70,24 +77,45 @@
 				Obrazek.png
 		\subsection{Funkcjonalności}
 			\subsubsection{Logowanie i Rejestracja}
-				Zaloguj się gdziekolwiek jesteś.
+				Załóż swoje konto, a będziesz mógł korzystać z aplikacji z każdego urządzenia, na którym jest zainstalowana i posiada dostęp do internetu! Zachowaj Twoje listy kierunków na swoim koncie!
 			\subsubsection{Przypasanie do grup}
-				Zapisz się do grupy Twojej uczelni/wydziału/kierunku.
+				Wybierz kierunki, które Cię interesują i przeglądaj materiały z nimi powiązane. W każdej chwili możesz dopisać do swojej listy nowe kierunki lub usunąć już niepotrzebne.
 			\subsubsection{Notatki}
-				Oglądaj i dodawaj nowe notatki.
+				Przeglądaj dostępne materiały z listy kierunków, którą sam utworzyłeś. Jeśli chcesz mieć dostęp offline to pobierz materiał w formie pliku!
 	\section{Technologie}
-			.NET, C\#, MySQL, Internet.
-			Visual Studio 2015, Heroku.
+			\subsection{Oprogramowanie}
+			\begin{itemize}
+			\item Visual Studio 2015 - Środowisko programistyczne.
+			\item SourceTree - Kontrola wersji.
+			\item GitHub - Repozytorium do przechowywania wersji online.
+			\item Heroku - Chmura, w której przechowywana jest baza danych.
+			\end{itemize}
+			\subsection{Technologie}
+			\begin{itemize}
+			\item C\#
+			\item .NET
+			\item MySQL
+			\end{itemize}
 	
 	\section{Implementacja}
 		\subsection{Podział projektu na pliki}
-			Folder : pliki itd.
+		
+			
 		\subsection{Schemat Modelu Obiektowego}
 			Może być UML		
 		\subsection{Interfejsy}
-			Opisy wszystkich interfejsów
+			\begin{itemize}
+				\item Models
+				\begin{itemize}
+					\item ILoginModel - bla bla bla
+				\end{itemize}
+				\item Views
+				\begin{itemize}
+					\item ILoginView - bla bla bla
+				\end{itemize}
+			\end{itemize}
 		\subsection{Rozwiązania}
-			Jakiś ciekawy, własny pomysł na coś, jakiś algorytm, coś fajnego.
+			Wszystkie nasze rozwiązania są tak cudowne, że trzeba by opisać cały kod linijka po linijce <3
 	\section{Testy}
 		Działa. 
 \end{document}
