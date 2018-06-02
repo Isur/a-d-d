@@ -40,9 +40,16 @@ namespace ADD.Models
 
         public bool Subscribe(User user, Specialization specialization)
         {
-            var userSpecialization = new UserSpecialization(user.Id, specialization.Id);
-            UsersSpecializationsRepository.Add(userSpecialization);
-            return true;
+            try
+            {
+                var userSpecialization = new UserSpecialization(user.Id, specialization.Id);
+                UsersSpecializationsRepository.Add(userSpecialization);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

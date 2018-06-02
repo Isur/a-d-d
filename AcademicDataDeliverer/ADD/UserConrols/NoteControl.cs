@@ -124,8 +124,13 @@ namespace ADD.UserConrols
         {
             SaveFileDialog selectLocation = new SaveFileDialog();
             selectLocation.Filter = "txt files (*.txt)|*.txt";
-            DialogResult dial = selectLocation.ShowDialog();
             string toSave = richTextBoxNote.Text;
+            if(toSave == "")
+            {
+                MessageBox.Show("Wybierz notatkę, która nie jest pusta!");
+                return;
+            }
+            DialogResult dial = selectLocation.ShowDialog();
             if (dial == DialogResult.Cancel)
                 return;
             if (selectLocation.FileName != "" && toSave != "")
@@ -135,7 +140,7 @@ namespace ADD.UserConrols
             else if (selectLocation.FileName == "")
                 MessageBox.Show("Wybierz miesjce zapisu!");
             else
-                MessageBox.Show("Wybierz notatkę!");
+                MessageBox.Show("Wybierz notatkę, która nie jest pusta!");
         }
         private async void saveToFile(string path, string contnent)
         {
