@@ -13,6 +13,30 @@
 \usepackage{multicol}
 \usepackage{tikz}
 \usepackage{makecell}
+% FOREST
+\usepackage[edges]{forest}
+
+\definecolor{foldercolor}{RGB}{124,166,198}
+
+\tikzset{pics/folder/.style={code={%
+    \node[inner sep=0pt, minimum size=#1](-foldericon){};
+    \node[folder style, inner sep=0pt, minimum width=0.3*#1, minimum height=0.6*#1, above right, xshift=0.05*#1] at (-foldericon.west){};
+    \node[folder style, inner sep=0pt, minimum size=#1] at (-foldericon.center){};}
+    },
+    pics/folder/.default={20pt},
+    folder style/.style={draw=foldercolor!80!black,top color=foldercolor!40,bottom color=foldercolor}
+}
+
+\forestset{is file/.style={edge path'/.expanded={%
+        ([xshift=\forestregister{folder indent}]!u.parent anchor) |- (.child anchor)},
+        inner sep=1pt},
+    this folder size/.style={edge path'/.expanded={%
+        ([xshift=\forestregister{folder indent}]!u.parent anchor) |- (.child anchor) pic[solid]{folder=#1}}, inner ysep=0.6*#1},
+    folder tree indent/.style={before computing xy={l=#1}},
+    folder icons/.style={folder, this folder size=#1, folder tree indent=3*#1},
+    folder icons/.default={12pt},
+}
+
 % SETTINGS
 \addtolength{\hoffset}{-1.5cm}
 \addtolength{\marginparwidth}{-1.5cm}
@@ -96,11 +120,106 @@
 			\item .NET
 			\item MySQL
 			\end{itemize}
-	
+			\clearpage
 	\section{Implementacja}
 		\subsection{Podział projektu na pliki}
-		
-			
+		\begin{multicols}{2}
+\scalebox{0.9}[0.7]{
+			\begin{forest}
+				for tree={font=\sffamily, grow'=0,
+    folder indent=.3em, folder icons}
+    	[ADD
+			[.Models	
+				[.Interfaces
+					[ILoginModel.cs, is file]
+					[INoteModel.cs, is file]	
+					[IProfileModel.cs, is file]	
+					[IRegisterModel.cs, is file]	
+					[ISubscribeModel.cs, is file]					
+				]
+				[.Results
+					[Result.cs, is file]				
+				]
+				[.Session
+					[ISession.cs, is file]
+					[Session.cs, is file]				
+				]  
+				[.Utils
+					[.Encrypters
+						[IEncrypter.cs, is file]
+						[SHA1Encrypter.cs, is file]					
+					]
+				]
+				[LoginModel.cs, is file]
+				[NoteModel.cs, is file]
+				[ProfileModel.cs, is file]
+				[RegisterModel.cs, is file]
+				[SubscribeModel.cs, is file]
+			]
+			[.Presenters
+				[LoginPresenter.cs, is file]
+				[NotePresenter.cs, is file]
+				[ProfilePresenter.cs, is file]
+				[RegisterPresenter.cs, is file]
+				[SubscribePresenter.cs, is file]			
+			]
+			[.UserControl
+				[LoginControl.cs, is file]
+				[NoteControl.cs, is file]
+				[ProfileControl, is file]
+				[RegisterControl, is file]			
+			]
+			[.Views
+				[ILoginControl.cs, is file]
+				[INoteControl.cs, is file]
+				[IProfileControl, is file]
+				[IRegisterControl, is file]			
+				[ISubscribeView, is file]
+			]
+		]
+			\end{forest}
+}
+\scalebox{0.9}[0.7]{			
+	        \begin{forest}
+				for tree={font=\sffamily, grow'=0,
+    folder indent=.3em, folder icons}
+    	[DAL
+    		[.Models
+				[.Entity
+					[College.cs, is file]
+					[Faculty.cs, is file]
+					[Lecturer.cs, is file]
+					[Material.cs, is file]
+					[Specialization.cs, is file]
+					[Subject.cs, is file]
+					[User.cs, is file]
+					[UserSpecialization.cs, is file]
+				]
+				[.Repository
+					[CollegesRepository.cs, is file]		
+					[FacultiesRepository.cs, is file]
+					[LecturersRepository.cs, is file]
+					[MaterialsRepository.cs, is file]
+					[SpecializationsRepository.cs, is file]
+					[SubjectsRepository.cs, is file]
+					[UsersRepository.cs, is file]
+					[UsersSpecializationsRepository.cs, is file]
+				]    		
+    		]
+    	]
+    \end{forest}
+    }
+    \scalebox{0.9}[0.7]{
+    \begin{forest}
+				for tree={font=\sffamily, grow'=0,
+    folder indent=.3em, folder icons}
+    	[COMMOM
+    		[Logger.cs, is file]
+    		[LogType.cs, is file]
+	    ]
+	        \end{forest}
+}
+		\end{multicols}	
 		\subsection{Schemat Modelu Obiektowego}
 			Może być UML		
 		\subsection{Interfejsy}
