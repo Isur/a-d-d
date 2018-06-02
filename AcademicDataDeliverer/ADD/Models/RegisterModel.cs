@@ -70,6 +70,10 @@ namespace ADD.Models
             {
                 return new Result(false, Properties.Resources.LoginIsAlreadyTaken);
             }
+            if (mailAlreadyExists(newUser.MailAddress))
+            {
+                return new Result(false, Properties.Resources.MailIsAlreadyTaken);
+            }
 
             var user = newUser;
             user.Password = encrypter.Encrypt(user.Password);
@@ -87,6 +91,12 @@ namespace ADD.Models
         private bool loginAlreadyExists(string login)
         {
             var users = UsersRepository.GetList().Where(x => x.Login == login);
+            return users.Count() > 0;
+        }
+
+        private bool mailAlreadyExists(string mail)
+        {
+            var users = UsersRepository.GetList().Where(x => x.MailAddress == mail);
             return users.Count() > 0;
         }
     }

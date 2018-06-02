@@ -123,6 +123,9 @@
   <data name="LoginIsAlreadyTaken" xml:space="preserve">
     <value>Podany login jest już zajęty</value>
   </data>
+  <data name="MailIsAlreadyTaken" xml:space="preserve">
+    <value>Podany adres mail jest już zajęty.</value>
+  </data>
   <data name="RegisterFailed" xml:space="preserve">
     <value>Rejestracja konta nie powiodła się</value>
   </data>

@@ -79,6 +79,15 @@ namespace ADD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Podany adres mail jest już zajęty..
+        /// </summary>
+        internal static string MailIsAlreadyTaken {
+            get {
+                return ResourceManager.GetString("MailIsAlreadyTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rejestracja konta nie powiodła się.
         /// </summary>
         internal static string RegisterFailed {
