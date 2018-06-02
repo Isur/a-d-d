@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADD.Models.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace ADD.Views
     {
         string Login { get; }
         string Password { get; }
-        event Func<string, string, bool> LoginClick;
+        event Func<string, string, Result> LoginClick;
     }
 }

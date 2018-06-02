@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ADD.Views;
+using ADD.Models.Results;
 
 namespace ADD.UserConrols
 {
@@ -34,7 +35,7 @@ namespace ADD.UserConrols
             get { return textBoxPassword.Text; }
         }
 
-        public event Func<string, string, bool> LoginClick;
+        public event Func<string, string, Result> LoginClick;
         #endregion
 
         #region PUBLIC
@@ -46,7 +47,7 @@ namespace ADD.UserConrols
         {
             loginProgressBar.Visible = true;
 
-            var loginTask = new Task<bool>(() => 
+            var loginTask = new Task<Result>(() => 
             {
                 return LoginClick.Invoke(Login, Password);
             });
@@ -56,21 +57,23 @@ namespace ADD.UserConrols
 
             loginProgressBar.Visible = false;
 
-            if (loginResult)
+            if (loginResult.Success)
             {
                 onSuccessLoginAttempt();
             }
             else
             {
-                onFailedLoginAttempt();
+                onFailedLoginAttempt(loginResult);
             }
         }
         #endregion
 
-        private void onFailedLoginAttempt()
+        private void onFailedLoginAttempt(Result result)
         {
             textBoxLogin.BackColor = Color.Red;
             textBoxPassword.BackColor = Color.Red;
+
+            MessageBox.Show(result.ErrorMessage);
         }
 
         private void onSuccessLoginAttempt()

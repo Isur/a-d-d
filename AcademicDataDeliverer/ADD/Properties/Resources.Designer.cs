@@ -104,5 +104,14 @@ namespace ADD.Properties {
                 return ResourceManager.GetString("SuccessfulLoginAttempt", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Niepoprawny login lub hasło.
+        /// </summary>
+        internal static string WrongLoginOrPassword {
+            get {
+                return ResourceManager.GetString("WrongLoginOrPassword", resourceCulture);
+            }
+        }
     }
 }

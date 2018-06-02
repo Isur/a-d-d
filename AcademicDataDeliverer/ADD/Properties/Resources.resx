@@ -132,4 +132,7 @@
   <data name="SuccessfulLoginAttempt" xml:space="preserve">
     <value>Użytkownik {0}: poprawne logowanie</value>
   </data>
+  <data name="WrongLoginOrPassword" xml:space="preserve">
+    <value>Niepoprawny login lub hasło</value>
+  </data>
 </root>

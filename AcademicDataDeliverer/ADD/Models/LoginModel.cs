@@ -1,4 +1,5 @@
-﻿using ADD.Models.Session;
+﻿using ADD.Models.Results;
+using ADD.Models.Session;
 using ADD.Models.Utils.Encrypters;
 using Common;
 using DAL;
@@ -28,24 +29,35 @@ namespace ADD.Models
             this.encrypter = encrypter;
         }
 
-        public bool Login(string login, string password)
+        public Result Login(string login, string password)
+        {
+            try
+            {
+                return logIn(login, password);
+            }
+            catch(Exception ex)
+            {
+                Logger.Warning(string.Format(Properties.Resources.FailedLoginAttempt, login));
+                return new Result(false, ex.Message);
+            }
+        }
+
+        private Result logIn(string login, string password)
         {
             var hashedPassword = encrypter.Encrypt(password);
 
             var userList = UsersRepository.GetList().Where(x => x.Login == login && x.Password == hashedPassword).ToList();
             var anyMatchingUsers = userList.Count > 0;
 
-            if (anyMatchingUsers)
-            {
-                session.User = userList.First();
-                Logger.Info(string.Format(Properties.Resources.SuccessfulLoginAttempt, login));
-            }
-            else
+            if (!anyMatchingUsers)
             {
                 Logger.Warning(string.Format(Properties.Resources.FailedLoginAttempt, login));
+                return new Result(false, Properties.Resources.WrongLoginOrPassword);
             }
 
-            return anyMatchingUsers;
+            session.User = userList.First();
+            Logger.Info(string.Format(Properties.Resources.SuccessfulLoginAttempt, login));
+            return new Result(true);
         }
     }
 }
