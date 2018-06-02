@@ -120,6 +120,9 @@
   <data name="FailedLoginAttempt" xml:space="preserve">
     <value>Użytkownik {0}: nieudana próba logowania</value>
   </data>
+  <data name="LoginIsAlreadyTaken" xml:space="preserve">
+    <value>Podany login jest już zajęty</value>
+  </data>
   <data name="RegisterFailed" xml:space="preserve">
     <value>Rejestracja konta nie powiodła się</value>
   </data>

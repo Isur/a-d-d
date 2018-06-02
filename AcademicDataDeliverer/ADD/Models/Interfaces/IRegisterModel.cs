@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using ADD.Models.Results;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,6 @@ namespace ADD.Models
         ICollection<Faculty> GetFacultiesInCollege(College college);
         ICollection<Specialization> GetSpecializationsOnFaculty(Faculty faculty);
 
-        bool RegisterNewUser(User newUser, Specialization specialization);
+        Result RegisterNewUser(User newUser, Specialization specialization);
     }
 }
