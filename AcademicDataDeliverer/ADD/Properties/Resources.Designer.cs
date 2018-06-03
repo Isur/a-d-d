@@ -61,6 +61,15 @@ namespace ADD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nie można uzyzskać danych z bazy..
+        /// </summary>
+        internal static string ConnectionProblem {
+            get {
+                return ResourceManager.GetString("ConnectionProblem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Użytkownik {0}: nieudana próba logowania.
         /// </summary>
         internal static string FailedLoginAttempt {

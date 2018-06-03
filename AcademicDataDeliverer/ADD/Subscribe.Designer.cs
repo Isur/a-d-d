@@ -49,7 +49,7 @@
             this.progressBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progressBar.InnerMargin = 2;
             this.progressBar.InnerWidth = -1;
-            this.progressBar.Location = new System.Drawing.Point(60, 11);
+            this.progressBar.Location = new System.Drawing.Point(113, 13);
             this.progressBar.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar.MarqueeAnimationSpeed = 2000;
             this.progressBar.Name = "progressBar";
@@ -77,7 +77,7 @@
             // 
             this.comboBoxSpecialization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSpecialization.FormattingEnabled = true;
-            this.comboBoxSpecialization.Location = new System.Drawing.Point(58, 59);
+            this.comboBoxSpecialization.Location = new System.Drawing.Point(111, 61);
             this.comboBoxSpecialization.Name = "comboBoxSpecialization";
             this.comboBoxSpecialization.Size = new System.Drawing.Size(139, 21);
             this.comboBoxSpecialization.TabIndex = 25;
@@ -87,7 +87,7 @@
             // 
             this.comboBoxFaculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFaculty.FormattingEnabled = true;
-            this.comboBoxFaculty.Location = new System.Drawing.Point(58, 32);
+            this.comboBoxFaculty.Location = new System.Drawing.Point(111, 34);
             this.comboBoxFaculty.Name = "comboBoxFaculty";
             this.comboBoxFaculty.Size = new System.Drawing.Size(139, 21);
             this.comboBoxFaculty.TabIndex = 24;
@@ -97,7 +97,7 @@
             // 
             this.comboBoxCollege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCollege.FormattingEnabled = true;
-            this.comboBoxCollege.Location = new System.Drawing.Point(58, 5);
+            this.comboBoxCollege.Location = new System.Drawing.Point(111, 7);
             this.comboBoxCollege.Name = "comboBoxCollege";
             this.comboBoxCollege.Size = new System.Drawing.Size(139, 21);
             this.comboBoxCollege.TabIndex = 23;
@@ -106,7 +106,7 @@
             // labelSpecialization
             // 
             this.labelSpecialization.AutoSize = true;
-            this.labelSpecialization.Location = new System.Drawing.Point(6, 62);
+            this.labelSpecialization.Location = new System.Drawing.Point(59, 64);
             this.labelSpecialization.Name = "labelSpecialization";
             this.labelSpecialization.Size = new System.Drawing.Size(49, 13);
             this.labelSpecialization.TabIndex = 22;
@@ -115,7 +115,7 @@
             // labelFaculty
             // 
             this.labelFaculty.AutoSize = true;
-            this.labelFaculty.Location = new System.Drawing.Point(9, 35);
+            this.labelFaculty.Location = new System.Drawing.Point(62, 37);
             this.labelFaculty.Name = "labelFaculty";
             this.labelFaculty.Size = new System.Drawing.Size(46, 13);
             this.labelFaculty.TabIndex = 21;
@@ -124,7 +124,7 @@
             // labelCollege
             // 
             this.labelCollege.AutoSize = true;
-            this.labelCollege.Location = new System.Drawing.Point(7, 8);
+            this.labelCollege.Location = new System.Drawing.Point(60, 10);
             this.labelCollege.Name = "labelCollege";
             this.labelCollege.Size = new System.Drawing.Size(48, 13);
             this.labelCollege.TabIndex = 20;
@@ -132,7 +132,7 @@
             // 
             // buttonSubscribe
             // 
-            this.buttonSubscribe.Location = new System.Drawing.Point(118, 113);
+            this.buttonSubscribe.Location = new System.Drawing.Point(171, 115);
             this.buttonSubscribe.Name = "buttonSubscribe";
             this.buttonSubscribe.Size = new System.Drawing.Size(75, 23);
             this.buttonSubscribe.TabIndex = 27;
@@ -142,7 +142,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(10, 113);
+            this.buttonCancel.Location = new System.Drawing.Point(63, 115);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 28;
@@ -150,11 +150,11 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // NewSubscribeDialog
+            // Subscribe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(205, 148);
+            this.ClientSize = new System.Drawing.Size(304, 151);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubscribe);
             this.Controls.Add(this.progressBar);
@@ -164,7 +164,9 @@
             this.Controls.Add(this.labelSpecialization);
             this.Controls.Add(this.labelFaculty);
             this.Controls.Add(this.labelCollege);
-            this.Name = "NewSubscribeDialog";
+            this.MaximumSize = new System.Drawing.Size(320, 190);
+            this.MinimumSize = new System.Drawing.Size(320, 190);
+            this.Name = "Subscribe";
             this.Text = "Subskrybuj";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -106,7 +106,14 @@ namespace ADD.UserConrols
         {
             if(e.Node.Tag is Material)
             {
-                richTextBoxNote.Text = MaterialsRepository.GetDetailsByID((e.Node.Tag as Material).Id).Content;
+                try
+                {
+                    richTextBoxNote.Text = MaterialsRepository.GetDetailsByID((e.Node.Tag as Material).Id).Content;
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show(Properties.Resources.ConnectionProblem);
+                }
             }
         }
 
