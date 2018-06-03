@@ -13,6 +13,29 @@
 \usepackage{multicol}
 \usepackage{tikz}
 \usepackage{makecell}
+% LISTINGS
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+\usepackage{listings}
+\lstset{language=[Sharp]C,
+captionpos=b,
+frame=lines,
+showspaces=false,
+showtabs=false,
+breaklines=true,
+showstringspaces=false,
+breakatwhitespace=true,
+escapeinside={(*@}{@*)},
+commentstyle=\color{greencomments},
+morekeywords={partial, var, value, get, set},
+keywordstyle=\color{bluekeywords},
+stringstyle=\color{redstrings},
+basicstyle=\ttfamily\footnotesize ,
+tabsize=4,
+}
 % FOREST
 \usepackage[edges]{forest}
 
@@ -220,23 +243,185 @@
 	        \end{forest}
 }
 		\end{multicols}	
-		\subsection{Schemat Modelu Obiektowego}
+\clearpage \subsection{Schemat Modelu Obiektowego}
 			\begin{figure}[H]
 			\centering
 			\includegraphics[width=1.0\textwidth]{class_diagram}
 			\end{figure}
-		\subsection{Interfejsy}
+			\subsection{Interfejsy}
 			\begin{itemize}
 				\item Models
 				\begin{itemize}
-					\item ILoginModel - bla bla bla
+					\item ILoginModel
+\begin{lstlisting}
+/* Logowanie na podstawie loginu i hasla, zwraca resultat */
+Result Login(string login, string password);
+\end{lstlisting}
+					\item INoteModel
+\begin{lstlisting}
+/* Zwraca liste College */
+ICollection<College> GetColleges();
+/* Na podstawie nazwy College zwraca liste Faculty */
+ICollection<Faculty> GetFacultiesInCollege(string collegeName);
+/* Na podstawie nazwy Faculty zwraca liste Specialization */
+ICollection<Specialization> GetSpecializationsOnFaculty(string facultyName);
+/* Na podstawie nazwy Specialization zwraca liste Subject */
+ICollection<Subject> GetSubjectsFromSpecialization(string specializationName);
+/* Na podstawie nazwy Subject zwraca liste Material */
+ICollection<Material> GetMaterialsFromSubject(string subjectName);
+/* Na podstawie sciezki i zawartosci zapisuje do pliku */
+bool SaveToFile(string location, string content);
+\end{lstlisting}
+					\item IProfileModel
+\begin{lstlisting}
+/* Zwraca liste College */
+ICollection<College> GetColleges();
+/* Na podstawie nazwy College zwraca liste Faculty */
+ICollection<Faculty> GetFacultiesInCollege(string collegeName);
+/* Na podstawie nazwy Faculty zwraca liste Specialization */
+ICollection<Specialization> GetSpecializationsOnFaculty(string facultyName);
+/* Na podstawie nazwy Specialization zwraca liste Subject */
+ICollection<Subject> GetSubjectsFromSpecialization(string specializationName);
+/* Zwraca aktualnie zalogowanego uzytkownika */
+User GetUser();
+/* Anuluje wybrana subskrypcje */
+bool CancelSub(Specialization specialization);
+\end{lstlisting}					
+					\item IRegisterModel
+\begin{lstlisting}
+/* Zwraca liste College */
+ICollection<College> GetColleges();
+/* Na podstawie nazwy College zwraca liste Faculty */
+ICollection<Faculty> GetFacultiesInCollege(College college);
+/* Na podstawie nazwy Faculty zwraca liste Specialization */
+ICollection<Specialization> GetSpecializationsOnFaculty(Faculty faculty);
+/* Rejestruje nowego uzytkownika z wybrana Specialization */
+Result RegisterNewUser(User newUser, Specialization specialization);
+\end{lstlisting}					
+					\item ISubscribeModel
+\begin{lstlisting}
+/* Zwraca liste College */
+ICollection<College> GetColleges();
+/* Na podstawie nazwy College zwraca liste Faculty */
+ICollection<Faculty> GetFacultiesInCollege(College college);
+/* Na podstawie nazwy Faculty zwraca liste Specialization */
+ICollection<Specialization> GetSpecializationsOnFaculty(Faculty faculty);
+/* Subskrybuje dla danego uzytkownika wybrana Specialization*/
+bool Subscribe(User user, Specialization specialization);
+\end{lstlisting}			
+					\item ISession
+\begin{lstlisting}
+/* Uzytkownik */
+User User { get; set; }
+/* Konczy sesje uzytkownika */
+void EndSession();
+
+\end{lstlisting}
+					\item IEncrypter	
+\begin{lstlisting}
+/* Zwraca hash na podstawie podanego ciagu znakow */
+string Encrypt(string text);
+\end{lstlisting}	
 				\end{itemize}
-				\item Views
+\clearpage		\item Views
 				\begin{itemize}
-					\item ILoginView - bla bla bla
+					\item ILoginView
+					\begin{lstlisting}
+/* Login */
+string Login { get; }
+/* Haslo */
+string Password { get; }
+/* Logowanie na podstawie nazwy i hasla uzytkownika */
+event Func<string, string, Result> LoginClick;
+					\end{lstlisting}
+					\item INoteView					
+					\begin{lstlisting}
+/* Pobieranie listy College */					
+event Func<ICollection<College>> CollegeGetItems;
+/* Pobieranie listy Faculty na podstawie wybranego College */
+event Func<string, ICollection<Faculty>> FacultyGetItems;
+/* Pobieranie listy Specialization na podstawie wybranego Faculty */
+event Func<string, ICollection<Specialization>> SpecializationsGetItems;
+/* Pobieranie listy Subject na podstawie wybranej Specialization  */
+event Func<string, ICollection<Subject>> SubjectGetItems;
+/* Pobieranie listy Material na podstawie wybranego Subject */
+event Func<string, ICollection<Material>> MaterialGetItems;
+/* Zapis do pliku wybranego materialu do wybranej sciezki */
+event Func<string, string, bool> SaveToFile;
+					\end{lstlisting}
+					\item IProfileView 
+					\begin{lstlisting}
+/* Pobieranie listy College */					
+event Func<ICollection<College>> CollegeGetItems;
+/* Pobieranie listy Faculty na podstawie wybranego College */
+event Func<string, ICollection<Faculty>> FacultyGetItems;
+/* Pobieranie listy Specialization na podstawie wybranego Faculty */
+event Func<string, ICollection<Specialization>> SpecializationsGetItems;
+/* Pobieranie listy Subject na podstawie wybranej Specialization */
+event Func<string, ICollection<Subject>> SubjectGetItems;
+/* Usuwanie subskrypcji */
+event Func<Specialization, bool> DeleteSubscription;
+/* Pobieranie aktualnie zalogowanego Usera */
+event Func<User> GetUser;
+/* Przeladowanie listy subskrybowanych */
+void Reload();
+/* Imie */
+string FirstName { get; }
+/* Nazwisko */
+string LastName { get; }
+/* Mail */
+string Mail { get; }
+/* Numer Telefonu */
+string Phone { get; }
+					\end{lstlisting}
+ 					\item IRegisterView
+					\begin{lstlisting}
+/* Wartosci do formularza rejestracyjnego */
+string Login { get; }
+string Password { get; }
+string FirstName { get; }
+string Surname { get; }
+string PhoneNumber { get; }
+string Email { get; }
+string CollegeName { get; }
+string FacultyName { get; }
+string SpecializationName { get; }
+/* Czy te wartosci sa poprawne */
+bool IsLoginValid { get; }
+bool IsPasswordValid { get; }
+bool IsFirstNameValid { get; }
+bool IsSurnameValid { get; }
+bool IsPhoneNumberValid { get; }
+bool IsEmailValid { get; }
+bool IsCollegeNameValid { get; }
+bool IsFacultyNameValid { get; }
+bool IsSpecializationNameValid { get; }
+/* Czy wszystkie sa poprawne */
+bool AreAllValuesValid();
+/* Pobierane listy College */
+event Func<ICollection<College>> CollegeComboBoxDropDown;
+/* Pobieranie listy Faculty na podstawie wybranego College */
+event Func<College, ICollection<Faculty>> FacultyComboBoxDropDown;
+/* Pobieranie listy Specialization na podstawie wybranego Faculty*/
+event Func<Faculty, ICollection<Specialization>> SpecializationComboBoxDropDown;
+/* Rejestracja nowego uzytkownika i zapis jego subskrypcji */
+event Func<User, Specialization, Result> RegisterClick;
+
+					\end{lstlisting}
+					\item ISubscribeView 
+					\begin{lstlisting}		
+/* Pobieranie listy College */
+event Func<ICollection<College>> CollegeComboBoxDropDown;
+/* Pobieranie listy Faculty na podstawie wybranego College */
+event Func<College, ICollection<Faculty>> FacultyComboBoxDropDown;
+/* Pobieranie listy Specialization na podstawie wybranego Faculty */
+event Func<Faculty, ICollection<Specialization>> SpecializationComboBoxDropDown;
+/* Subskrypcja wybranej Specialization dla danego uzytkownika */
+event Func<User, Specialization, bool> SubscribeClick;
+			        \end{lstlisting}
 				\end{itemize}
 			\end{itemize}
-		\subsection{Rozwiązania}
+\clearpage	\subsection{Rozwiązania}
 			Wszystkie nasze rozwiązania są tak cudowne, że trzeba by opisać cały kod linijka po linijce <3
 	\section{Testy}
 		Działa. 
