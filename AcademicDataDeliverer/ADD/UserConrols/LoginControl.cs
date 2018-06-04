@@ -22,6 +22,7 @@ namespace ADD.UserConrols
         {
             InitializeComponent();
             this.viewChanger = viewChanger;
+            clearForm();
         }               
         #endregion
         #region INTERFACE
@@ -43,11 +44,16 @@ namespace ADD.UserConrols
         #endregion
 
         #region PRIVATE
-        private async void Login_Click(object sender, EventArgs e)
+        private void Login_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private async void login()
         {
             loginProgressBar.Visible = true;
 
-            var loginTask = new Task<Result>(() => 
+            var loginTask = new Task<Result>(() =>
             {
                 return LoginClick.Invoke(Login, Password);
             });
@@ -66,12 +72,22 @@ namespace ADD.UserConrols
                 onFailedLoginAttempt(loginResult);
             }
         }
+
+        private void onEnterClick(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                login();
+            }
+        }
         #endregion
 
         private void onFailedLoginAttempt(Result result)
         {
             textBoxLogin.BackColor = Color.Red;
             textBoxPassword.BackColor = Color.Red;
+
+            clearForm();
 
             MessageBox.Show(result.ErrorMessage);
         }
@@ -84,6 +100,28 @@ namespace ADD.UserConrols
         private void Register_Click(object sender, EventArgs e)
         {
             viewChanger.ShowRegisterView();
+        }
+
+        private void clearForm()
+        {
+            textBoxLogin.Text = string.Empty;
+            textBoxPassword.Text = string.Empty;
+            textBoxLogin.Focus();
+        }
+
+        private void LoginControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onEnterClick(e);
+        }
+
+        private void textBoxLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onEnterClick(e);
+        }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onEnterClick(e);
         }
     }
 }

@@ -157,7 +157,7 @@ namespace ADD.UserConrols
             var sub = new Subscribe(GetUser(), this);
             var subModel = new SubscribeModel();
             var subPresenter = new SubscribePresenter(subModel,sub);
-            sub.Show();
+            sub.ShowDialog();
         }
 
         public void Reload()

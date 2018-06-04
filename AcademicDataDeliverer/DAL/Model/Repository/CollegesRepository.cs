@@ -404,9 +404,7 @@ namespace DAL
                         List<College> objList = new List<College>();
                         while (reader.Read())
                         {
-                            //objList.Add(new collegesData(
-                            //	 (int) reader["Id"], (string) reader["Name"]));
-                            objList.Add(College.Parse(reader)); // Use this to avoid null issues
+                            objList.Add(College.Parse(reader)); 
                         }
                         return objList;
                     }
@@ -414,11 +412,6 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                // Put your code for Execption Handling here
-                // 1. Log the error
-                // 2. Handle or Throw Exception
-                // This is my code...Customized!!!!
-                // Note: You may modify code generation template by editing ExceptionHandler CodeBlock
                 throw ex;
             }
         }
