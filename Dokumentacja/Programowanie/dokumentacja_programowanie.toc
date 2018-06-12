@@ -8,9 +8,9 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Profil}{5}{subsubsection.2.2.3}
 \contentsline {subsubsection}{\numberline {2.2.4}Notatka}{5}{subsubsection.2.2.4}
 \contentsline {subsection}{\numberline {2.3}Funkcjonalno\IeC {\'s}ci}{6}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Logowanie i Rejestracja}{6}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Przypasanie do grup}{6}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Notatki}{6}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Mo\IeC {\.z}liwo\IeC {\'s}\IeC {\'c} logowania i rejestracji}{6}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Mo\IeC {\.z}liwo\IeC {\'s}\IeC {\'c} przypisania do grup}{6}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Mo\IeC {\.z}liwo\IeC {\'s}\IeC {\'c} przegl\IeC {\k a}dania notatek}{6}{subsubsection.2.3.3}
 \contentsline {section}{\numberline {3}Technologie}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Oprogramowanie}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Technologie}{6}{subsection.3.2}
@@ -18,4 +18,3 @@
 \contentsline {subsection}{\numberline {4.1}Podzia\IeC {\l } projektu na pliki}{7}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Schemat Modelu Obiektowego}{8}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Interfejsy}{8}{subsection.4.3}
-\contentsline {section}{\numberline {5}Testy}{12}{section.5}
